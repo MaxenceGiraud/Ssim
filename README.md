@@ -26,17 +26,25 @@ Quantum :
 - [ ] Hydrogen atom 
 
 Electromagnetism : 
+??
 
 General Relativity :
+??
 
 Cosmology :
+??
 
 Stellar Physics : 
 - [ ] Life of a star
 
+Fluid Mechanics :
+??
+
 ### Mathematics
 
 - [ ] Julia/Mandelbrot set
+- [ ] ODE solver ??
+- [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
 
 ### Chemistry 
-???
+???s
