@@ -22,29 +22,33 @@ Wave :
 
 Quantum : 
 - [ ] Infinte/Finite square well
-- [ ] Harmonic oscillator
+- [ ] (Harmonic oscillator)
 - [ ] Hydrogen atom 
 
-Electromagnetism : 
+Electromagnetism :  
 ??
 
-General Relativity :
+General Relativity :  
 ??
 
-Cosmology :
+Cosmology :  
 ??
 
 Stellar Physics : 
 - [ ] Life of a star
 
-Fluid Mechanics :
+Fluid Mechanics :  
 ??
 
 ### Mathematics
 
-- [ ] Julia/Mandelbrot set
+- [x] Julia/Mandelbrot set
 - [ ] ODE solver ??
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
 
-### Chemistry 
-???s
+### Chemistry  
+???
+
+## Some Refs
+- <https://www.compadre.org/osp/index.cfm>
+- <https://kforinas.pages.iu.edu/physlets/quantum/hydrogen.html>
