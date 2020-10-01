@@ -8,21 +8,27 @@ def juliaset(c,mandelbrot=False,posx = (-2,2),posy=(-2,2),n_iter = 100,precision
     ----------
     c : complex,
         (ignored if mandelbrot is set to True)
+        Constant term in the serie
 
     mandelbrot : bool,
+        If set to True compute the mandelbrot set, otherwise compute a julia set. Default to False
     
-    posx
+    posx : tuple, (float,float)
+        X axis of the grid
 
-    posy
+    posy : tuple, (float,float)
+        Y axis of the grid
 
-    n_iter
+    n_iter : int,
+        Number of iterations the series is done
 
-    precision
+    precision : int,
+        resolution on the x axis, y resolution is determined based on the difference of the size of the x and y axis length.
 
     Yields
     ------
     n_iter_diverg : numpy array of shape (precision,precision)
-                    Number of steps for which the series is gonna diverge (abs value > 2)
+        Number of steps for which the series is gonna diverge (abs value > 2)
 
     '''
 
@@ -43,7 +49,7 @@ def juliaset(c,mandelbrot=False,posx = (-2,2),posy=(-2,2),n_iter = 100,precision
     for i in range(n_iter):
         z = z**2 +c
         div = np.abs(z)>2 # Check if its gonna diverge
-        n_iter_diverg += i*div # if diverge, put index of divergence into tabe
+        n_iter_diverg += i*div # if diverge, put index of divergence into table
         z[div] = np.nan # and stop counting for those numbers
 
     if display :
