@@ -28,14 +28,14 @@ class Body:
         self.new_pos = None
 
     def update_velocity(self,acceleration,dt):
-        self.v = self.v + acceleration/dt
+        self.v = self.v + acceleration*dt
     
     def update_position(self,dt):
         self.pos_history.append(self.pos)
-        self.pos = self.pos + self.v/dt
+        self.pos = self.new_pos
 
     def compution_new_position(self,dt):
-        self.new_pos = self.pos + self.v/dt
+        self.new_pos = self.pos + self.v*dt
 
     def apply_new_position(self):
         self.pos_history.append(self.pos)
