@@ -16,6 +16,8 @@ Classical :
 - [ ] Harmonic oscillator
 - [ ] pendulum
 - [ ] 2/N body Simulations
+- [ ] Projectile motion
+- [ ] Rocket
 
 Wave :
 - [ ] Double slit
@@ -35,7 +37,7 @@ Cosmology :
 ??
 
 Stellar Physics : 
-- [ ] Life of a star
+- [ ] Life of a star (fusion of elements ...)
 
 Fluid Mechanics :  
 ??
