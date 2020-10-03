@@ -1,8 +1,9 @@
 import numpy as np
-from .NBody import gravitation_newton,acc
+from ..NBody.NBody import gravitation_newton
 
-class Rocket:
-    def __init__(self,mass_empty,specific_impulse,fuel_capacity,fuel_density,fuel_rate):
+
+class Rocket_SingleStage:
+    def __init__(self,mass_empty,specific_impulse,fuel_capacity,fuel_rate):
         self.specific_impulse = specific_impulse # seconds
         self.fuel = fuel_capacity # In Kg
         #self.fuel_capacity = fuel_capacity
@@ -27,12 +28,14 @@ class Rocket:
         f = self.get_force(planet,dt)
         return f/self.mass
 
-    def update_position(self,dt):
+    def update_position(self,planet,dt):
+        self.update_velocity(planet,dt)
         self.pos = self.pos + self.v*dt
         if self.pos < 0 : # Collision with planet
             self.pos = 0
         
-    def update_velocity(self,acc,dt):
+    def update_velocity(self,planet,dt):
+        acc = self.get_acc(planet,dt)
         self.v = self.v + acc*dt
 
     def update_fuel(self,dt):
@@ -40,7 +43,7 @@ class Rocket:
 
     def get_force(self,planet,dt):
         f_planet = -gravitation_newton(planet.mass,self.mass,self.pos+planet.radius)
-        thrust = self.fuel_rate*dt * self.specific_impulse  # TODO check thrust equation
+        thrust = self.fuel_rate/dt * self.specific_impulse  # TODO check thrust equation
 
         return f_planet + thrust
 
@@ -51,4 +54,11 @@ class Planet:
 
 
 def simulate_rocket_launch(rocket,planet,t,dt=0.1):
-    pass
+    rocket_pos = [rocket.pos]
+    i=0
+    while i < (t/dt):
+        rocket.update_fuel(dt)
+        rocket.update_position(planet,dt)
+        rocket_pos.append(rocket.pos)
+        i+=1
+    return rocket_pos
