@@ -5,7 +5,7 @@ G = 6.674e-11
 
 def gravitation_newton(m1,m2,r):
     ''' Compute the Gravitionnal (according to Newton) force between 2 objects'''
-    return G * (m1+m2) / r
+    return G * (m1*m2) / r
 
 def acc(mass,other_mass,distance):
     return gravitation_newton(mass,other_mass,distance)/mass
@@ -19,7 +19,8 @@ def center_of_mass(list_bodies):
 
 
 class Body:
-    def __init__(self,mass,position,velocity):
+    def __init__(self,name,mass,position,velocity):
+        self.name = name
         self.m = np.array(mass)
         self.pos = np.array(position)
         self.v = np.array(velocity)
