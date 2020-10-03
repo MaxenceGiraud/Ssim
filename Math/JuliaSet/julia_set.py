@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def juliaset(c,mandelbrot=False,posx = (-2,2),posy=(-2,2),n_iter = 100,precision =1000,display=True):
+def juliaset(c,mandelbrot=False,posx = (-2,2),posy=(-2,2),n_iter = 100,precision =1000,display=True,colormap='Spectral'):
     '''Compute the divergence time of the series z_{n+1} = z_n**2 +c on the complex plane
 
     Parameters
@@ -52,9 +52,17 @@ def juliaset(c,mandelbrot=False,posx = (-2,2),posy=(-2,2),n_iter = 100,precision
         n_iter_diverg += i*div # if diverge, put index of divergence into table
         z[div] = np.nan # and stop counting for those numbers
 
+    log_iter_div = np.log(n_iter_diverg+1)
+
     if display :
-        plt.imshow(np.log(1+n_iter_diverg),cmap='Spectral')
-        plt.axis('off')
+        plt.figure(figsize=(15,15))
+        plt.imshow(log_iter_div,cmap=colormap,extent=(posx[0],posx[1],posy[0],posy[1]))
+        plt.xlabel("Re(z)")
+        plt.ylabel("Im(z)")
+        if mandelbrot : 
+            plt.title('Mandelbrot Set')
+        else :
+            plt.title('Julia Set with c='+str(c))
         plt.plot()
 
-    return  n_iter_diverg
+    return  log_iter_div
