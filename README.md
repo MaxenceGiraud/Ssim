@@ -15,7 +15,7 @@ For each sim :
 Classical : 
 - [ ] Harmonic oscillator
 - [ ] pendulum
-- [ ] 2/N body Simulations
+- [x] 2/N body Simulations
 - [ ] Projectile motion
 - [ ] Rocket
 
