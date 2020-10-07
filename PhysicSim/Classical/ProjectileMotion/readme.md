@@ -7,3 +7,4 @@ Simulation of projectile motion
 - [x] Implement projectile motion with linear drag
 - [ ] Implement projectile motion with quadratic drag
 - [ ] Implement projectile motion with both linear and quadratic drag
+- [ ] Add other drag forces (newton & stokes drag)

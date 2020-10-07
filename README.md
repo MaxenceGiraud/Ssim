@@ -7,17 +7,17 @@
 ### Todo list for each simulation
 For each sim :
 * Add readme
-* Create notebook 
+* Create notebook with examples of use
 
 ## List of simulations
 
 ### Physics
 Classical : 
+- [x] N body Simulations
+- [x] Projectile motion
+- [ ] Rocket
 - [ ] Harmonic oscillator
 - [ ] pendulum
-- [x] 2/N body Simulations
-- [ ] Projectile motion
-- [ ] Rocket
 
 Wave :
 - [ ] Double slit
@@ -28,23 +28,23 @@ Quantum :
 - [ ] Hydrogen atom 
 
 Electromagnetism :  
-??
+- [ ] ??
 
 General Relativity :  
-??
+- [ ] GR sim (see science click on GR visualisation)
 
 Cosmology :  
-??
+- [ ] small model of a galaxy ?? (what is possible??)
 
 Stellar Physics : 
-- [ ] Life of a star (fusion of elements ...)
+- [ ] Life of a star (fusion of elements, death, compute if neutron star, black hole ...)
 
 Fluid Mechanics :  
-??
+- [ ] Simulate a place flight
 
 ### Mathematics
 
-- [x] Julia/Mandelbrot set
+- [x] Julia/Fatou set
 - [ ] ODE solver ??
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
 

@@ -24,5 +24,5 @@ U.update(1000,0.1)
 
 - [x] Implement 2-Body sim
 - [x] Support for N bodies
-- [ ] Support for 3/n D coordonates systems
+- [ ] Support for 3D coordonates systems
 - [ ] Optimize Computations
