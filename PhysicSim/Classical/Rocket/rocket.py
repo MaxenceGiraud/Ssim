@@ -3,10 +3,10 @@ from ..NBody.NBody import gravitation_newton,acc,Body
 
 
 class Stage:
-    def __init__(self,empty_mass,fuel,thrust,specific_impulse):
+    def __init__(self,empty_mass,fuel,expulsion_velocity,specific_impulse):
         self.empty_mass = empty_mass
         self.fuel = fuel
-        self.thrust = thrust
+        self.expulsion_velocity = expulsion_velocity
         self.specific_impulse = specific_impulse
 
         self.fuel_rate = 0
@@ -50,6 +50,7 @@ class Rocket(Body):
 
         if len(self.stages) != 0 :
             thrust = self.stages[0]
+            # Thrust = mass expelled * speed of expulsion
         else :
             thrust = 0
 

@@ -9,6 +9,6 @@ Find examples in the notebook "julia.ipynb"
 
 - [x] Implement Julia set
 - [x] Add option for Mandelbrot
-- [ ] Add the possibility to have different functions
+- [x] Add the possibility to have custom functions
 - [ ] Optimize Computations
 - [ ] Implement for quaternions
