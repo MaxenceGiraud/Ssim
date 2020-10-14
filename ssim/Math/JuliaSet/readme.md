@@ -15,7 +15,7 @@ Find examples in the notebook "julia.ipynb"
 
 ## Some external links
 
-<https://en.wikipedia.org/wiki/Julia_set>
-<https://en.wikipedia.org/wiki/Newton_fractal>
-<https://en.wikibooks.org/wiki/Pictures_of_Julia_and_Mandelbrot_sets>
-<http://www.hiddendimension.com/FractalMath/Convergent_Fractals_Main.html>
+- <https://en.wikipedia.org/wiki/Julia_set>
+- <https://en.wikipedia.org/wiki/Newton_fractal>
+- <https://en.wikibooks.org/wiki/Pictures_of_Julia_and_Mandelbrot_sets>
+- <http://www.hiddendimension.com/FractalMath/Convergent_Fractals_Main.html>

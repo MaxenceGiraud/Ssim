@@ -35,7 +35,7 @@ def juliaset(c,init_with_constant=False,posx = (-2,2),posy=(-2,2),n_iter = 100,p
     Yields
     ------
     log_iter_div : numpy array of shape (precision,precision)
-        log of the number of steps for which the series is gonna diverge (abs value of zn > 2)
+        log of the number of steps for which the series is gonna diverge (by default abs value of zn > 2)
 
     '''
     # Initilize gridspace
