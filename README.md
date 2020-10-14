@@ -11,14 +11,15 @@ For each sim :
 
 ## Requirements 
 * Numpy 
+* matplotlib (for plots in notebooks only)
 * [manim](https://github.com/ManimCommunity/manim) (for the animations only)
 
 ## List of simulations
 
 ### Physics
 Classical : 
-- [x] N body Simulations
-- [x] Projectile motion
+- [x] [N body Simulations](ssim/Physics/Classical/NBody/)
+- [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
 - [ ] Rocket
 - [ ] Pendulum
 
@@ -47,7 +48,7 @@ Fluid Mechanics :
 
 ### Mathematics
 
-- [x] Julia/Fatou set
+- [x] [Julia/Fatou set](ssim/Math/JuliaSet/)
 - [ ] ODE solver ??
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
 
