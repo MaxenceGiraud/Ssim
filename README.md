@@ -1,5 +1,8 @@
 # Ssim -Scientific Simulations
 
+Personal project of Math/Physics Simulations or algorithms
+
+
 ## Contributions
 ### Author
 [Maxence Giraud](https://github.com/MaxenceGiraud/)
@@ -14,14 +17,24 @@ For each sim :
 * matplotlib (for plots in notebooks only)
 * [manim](https://github.com/ManimCommunity/manim) (for the animations only)
 
+Some specific requirements may be specified in the sim readme.
 ## List of simulations
+
+### Mathematics
+
+- [x] [Julia/Fatou set](ssim/Math/JuliaSet/)
+- [ ] [Koch Snowflakes](ssim/Math/KochSnowflake/)
+- [ ] Other Fractals ??
+- [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
+- [ ] ODE solver (Runge-Kutta methods, BDF, LSODA)   
 
 ### Physics
 Classical : 
 - [x] [N body Simulations](ssim/Physics/Classical/NBody/)
 - [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
-- [ ] Rocket
-- [ ] Pendulum
+- [ ] [Rocket](ssim/Physics/Classical/Rocket/)   
+- [ ] N Pendulum system
+  
 
 Wave :
 - [ ] Double slit
@@ -45,12 +58,6 @@ Stellar Physics :
 
 Fluid Mechanics :  
 - [ ] Simulate a plane flight
-
-### Mathematics
-
-- [x] [Julia/Fatou set](ssim/Math/JuliaSet/)
-- [ ] ODE solver ??
-- [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
 
 
 ## External Ressources 

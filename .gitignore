@@ -198,3 +198,5 @@ dmypy.json
 # Ignore all local history of files
 .history
 perso.py
+.vscode/launch.json
+.vscode/tasks.json
