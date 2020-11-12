@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import inspect
 
 def juliaset(c,init_with_constant=False,posx = (-2,2),posy=(-2,2),n_iter = 100,precision =1000,display=True,colormap='Spectral',f = lambda z,c : z**2 +c,div_threshold = 2 ):
     '''Compute the divergence time of the series z_{n+1} = z_n**2 +c on the complex plane
