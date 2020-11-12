@@ -35,7 +35,7 @@ Classical :
 - [ ] N Pendulum system
   
 Wave :
-- [x] [Double slit](ssim/Physics/Wave/DoubleSlit/)
+- [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves)
 
 Quantum : 
 - [ ] Infinte/Finite square well
