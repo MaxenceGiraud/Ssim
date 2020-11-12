@@ -1,6 +1,6 @@
 # Ssim -Scientific Simulations
 
-Personal project of Math/Physics Simulations or algorithms
+Personal project of Math/Physics Simulations and visualisations
 
 
 ## Contributions
@@ -26,7 +26,6 @@ Some specific requirements may be specified in the sim readme.
 - [ ] [Koch Snowflakes](ssim/Math/KochSnowflake/)
 - [ ] Other Fractals ??
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
-- [ ] ODE solver (Runge-Kutta methods, BDF, LSODA)   
 
 ### Physics
 Classical : 
@@ -35,20 +34,18 @@ Classical :
 - [ ] [Rocket](ssim/Physics/Classical/Rocket/)   
 - [ ] N Pendulum system
   
-
 Wave :
-- [ ] Double slit
+- [x] [Double slit](ssim/Physics/Wave/DoubleSlit/)
 
 Quantum : 
 - [ ] Infinte/Finite square well
 - [ ] Hydrogen atom 
+- [ ] Quantum Double Split
 
-Electromagnetism :  
-- [ ] ??
-
-General Relativity / Topology :  
+General Relativity / Manifold :  
 - [ ] GR sim (see science click on GR visualisation)
 - [ ] Geodesic/Curved space(time) (<https://youtu.be/NfqrCdAjiks>)
+- [ ] Black hole (schwarzschild, kerr)
 
 Cosmology :  
 - [ ] small model of a galaxy ?? (what is possible??)
