@@ -23,7 +23,7 @@ Some specific requirements may be specified in the sim readme.
 ### Mathematics
 
 - [x] [Julia/Fatou set](ssim/Math/JuliaSet/)
-- [ ] [Koch Snowflakes](ssim/Math/KochSnowflake/)
+- [x] [Koch Snowflakes](ssim/Math/KochSnowflake/)
 - [ ] Other Fractals ??
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
 
@@ -33,6 +33,7 @@ Classical :
 - [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
 - [ ] [Rocket](ssim/Physics/Classical/Rocket/)   
 - [ ] N Pendulum system
+- [ ] Foucault pendulum
   
 Wave :
 - [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves)
