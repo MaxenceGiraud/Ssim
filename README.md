@@ -13,9 +13,9 @@ For each sim :
 * Create notebook with examples of use/ animation with manim
 
 ## Requirements 
-* Numpy 
-* matplotlib (for plots in notebooks only)
-* [manim](https://github.com/ManimCommunity/manim) (for the animations only)
+* [NumPy](https://numpy.org/)
+* [Matplotlib](https://matplotlib.org/) (for plots in notebooks only)
+* [Manim](https://github.com/ManimCommunity/manim) (for the animations only)
 
 Some specific requirements may be specified in the sim readme.
 ## List of simulations
@@ -63,7 +63,7 @@ Fluid Mechanics :
 
 ## References
 
-[1] R. TAYLOR, John. Classical Mechanics. University Science Books, 2005.   
+[1] R. TAYLOR, John. [Classical Mechanics.](https://www.uscibooks.com/taylor2.htm) University Science Books, 2005.   
 
 [//]: # ([2] J. GRIFFITHS, David. Introduction to Electrodynamics. Pearson Education Limited, 2013.    
 [3] SHANKAR, R.. Principles of Quantum Mechanics. Springer US, 2011.    

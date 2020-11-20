@@ -26,3 +26,5 @@ U.update(1000,0.1)
 - [x] Support for N bodies
 - [ ] Support for 3D coordonates systems
 - [ ] Optimize Computations
+- [ ] Solve using external ODE solver
+- [ ] Solve using Lagrangian mechanics (section 8 Taylor)
