@@ -40,7 +40,7 @@ Wave :
 
 Quantum : 
 - [ ] Infinte/Finite square well
-- [ ] Hydrogen atom 
+- [x] [Hydrogen atom orbitals plot](ssim/Physics/Quantum/Hydrogen/)
 - [ ] Quantum Double Split
 
 General Relativity / Manifold :  
