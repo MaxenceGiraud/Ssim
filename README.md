@@ -43,10 +43,11 @@ Wave :
 Quantum : 
 - [ ] Infinte/Finite square well
 - [x] [Hydrogen atom orbitals plot](ssim/Physics/Quantum/Hydrogen/)
+- [ ] Helium orbitals (using [Hartree-Fock method](https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method))
 - [ ] Quantum Double Split
 
 General Relativity / Manifold :  
-- [ ] GR sim (see science click on GR visualisation)
+- [ ] GR sim of spacetime arround massive object (see science click video on youtube on GR visualisation)
 - [ ] Geodesic/Curved space(time) (<https://youtu.be/NfqrCdAjiks>)
 - [ ] Black hole (schwarzschild, kerr)
 

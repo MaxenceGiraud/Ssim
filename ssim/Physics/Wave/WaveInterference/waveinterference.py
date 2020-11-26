@@ -48,7 +48,7 @@ def waves_interferences(sources = [Source((0,-0.5)) ,Source((0,0.5))],posx=(0,10
         plt.xlim(*posx)
         plt.ylim(*posy)
         # Wave
-        plt.scatter(grid[:,0],grid[:,1],c=final_wave_intensity,cmap=plt.cm.binary)
+        plt.imshow(final_wave_intensity.reshape(xx.shape),interpolation='sinc',cmap="inferno")
         # Sources
         for source  in sources :
             plt.scatter(*source.pos,c='blue')
