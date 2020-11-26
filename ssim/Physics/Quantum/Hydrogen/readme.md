@@ -40,9 +40,7 @@ $$ {\frac {d}{dx}}\left[(1-x^{2}){\frac {d}{dx}}P_{\ell }^{m}(x)\right]+\left[\e
 
 The Radial wavefunction equals to :
 
-$$  
-R_{n \ell}(r) = \sqrt{\left(\frac{2}{n a}\right)^{3} \frac{(n-\ell-1) !}{2 n(n+\ell) !}} e^{-r / n a}\left(\frac{2 r}{n a}\right)^{\ell}\left[L_{n-\ell-1}^{2 \ell+1}(2 r / n a)\right]
-$$
+$$  R_{n \ell}(r) = \sqrt{\left(\frac{2}{n a}\right)^{3} \frac{(n-\ell-1) !}{2 n(n+\ell) !}} e^{-r / n a}\left(\frac{2 r}{n a}\right)^{\ell}\left[L_{n-\ell-1}^{2 \ell+1}(2 r / n a)\right] $$
 
 Where $L_{n}^{\alpha}$ is an [associated Laguerre polynomial](https://en.wikipedia.org/wiki/Laguerre_polynomials), defined to be the solutions to the differential equations :
 
