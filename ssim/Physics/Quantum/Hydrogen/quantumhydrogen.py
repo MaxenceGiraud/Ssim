@@ -36,6 +36,8 @@ def compute_radial_hydrogen(n,l,r,a= 0.529e-10):
     
     return np.sqrt(sqrt_term) * np.exp(exp_term) * third_term * laguerre
 
+
+# equivalent to scipy.special.sph_harm
 def compute_spherical_harmonics_hydrogen(l,m,theta,phi):
     '''
     Parameters
@@ -70,7 +72,10 @@ def hydrogen_wave_function(x,n,l,m,a= 0.529e-10):
     out : 
     '''
 
-    assert (len(x.shape) <3), "X dimension must be at most 2" 
+    assert (len(x.shape) <3), "X dimension must be at most 2"  
+    assert n > 0, "n must be greater than 0"
+    assert l < n and l>=0, "l must be between 0 and n-1"
+    assert m <= l and m>=-l, "m must be between -l and l"
 
     ## Compute spherical / polar coordonates
     theta = 0
@@ -88,25 +93,75 @@ def hydrogen_wave_function(x,n,l,m,a= 0.529e-10):
 
     return hwf
 
+def plot_hydrogen_orbitals(n=2,l=0,m=0,precision=800,posx=(-10,10),posy=(-10,10),posz=None):
+    ''' Plot hydrogen orbitals in 1/2/3D'''
+
+    ## 1D
+    if posy == None :
+        grid = np.linspace(posx[0],posx[1],precision)
+        hwf = hydrogen_wave_function(grid,n,l,m,a=1)
+        probs = np.abs(hwf)
+
+        # Plotting
+        #plt.imshow(probs,cmap='inferno')
+        plt.plot(grid,probs)
+        #plt.axis('off')
+        title = "Radial Wave function with n="+str(n)+", l="+str(l)+", m="+str(m)
+        plt.title(title)
+        plt.show()
+    
+    ## 2D
+    elif posz == None :
+        precisiony = int((max(posy)-min(posy))/(max(posx)-min(posx)) * precision) # adapt y precision if grid not a square
+
+        # Creating grid points 
+        x= np.linspace(posx[0],posx[1],precision)
+        y = np.linspace(posy[0],posy[1],precisiony)
+        xx,yy = np.meshgrid(x,y)
+        grid = np.vstack((xx.flatten(),yy.flatten())).T
+        hwf = hydrogen_wave_function(grid,n,l,m,a=1).reshape(xx.shape)
+        probs = np.abs(hwf)**0.7 # the power here is simply for plotting purposes
+
+        # Plotting
+        plt.imshow(probs,cmap='magma')
+        plt.axis('off')
+        title = "Hydrogen orbitals with n="+str(n)+", l="+str(l)+", m="+str(m)
+        plt.title(title)
+        plt.show()
+
+    ## 3D
+    else :
+        raise NotImplementedError("3D plots is not yet implemented")
+
+        precisiony = int((max(posy)-min(posy))/(max(posx)-min(posx)) * precision) 
+        precisionz = int((max(posz)-min(posz))/(max(posx)-min(posx)) * precision) 
+
+        # Creating grid points 
+        x= np.linspace(posx[0],posx[1],precision)
+        y = np.linspace(posy[0],posy[1],precisiony)
+        z = np.linspace(posz[0],posz[1],precisionz)
+        xx,yy,zz = np.meshgrid(x,y,z)
+        grid = np.vstack((xx.flatten(),yy.flatten(),zz.flatten())).T
+
+        hwf = hydrogen_wave_function(grid,n,l,m,a=1).reshape(xx.shape)
+        probs = np.abs(hwf)**0.7 # the power here is simply for plotting purposes
+
+        to_include = probs.flatten() >= 1e-4 # Datapoints to include, in order not to have a filled cube ()
+
+        # Plotting
+        title = "Hydrogen orbitals with n="+str(n)+", l="+str(l)+", m="+str(m)
+        # TODO
+    
 
 def main():
 
-    # 2D 
-    # Creating grid points 
-    x= np.linspace(-10,10,100)
-    y = np.linspace(-10,10,100)
-    xx,yy = np.meshgrid(x,y)
-    grid = np.vstack((xx.flatten(),yy.flatten())).T
-    hwf = hydrogen_wave_function(grid,4,2,-1,a=1).reshape(xx.shape)
-    probs = np.abs(hwf)**2
-    plt.imshow(probs)
-    plt.show()
-
+    # 1D
+    #plot_hydrogen_orbitals(posx=(0,10),posy=None)
+    # 2D
+    plot_hydrogen_orbitals(4,1,-1)
+    
     #3D
-    z = np.linspace(-10,10,100)
-    xx,yy,zz = np.meshgrid(x,y,z)
-    grid = np.vstack((xx.flatten(),yy.flatten(),zz.flatten())).T
-    hwf = hydrogen_wave_function(grid,4,2,-1,a=1).reshape(xx.shape)
+    # plot_hydrogen_orbitals(posz=(-12,12))
 
 if __name__ == '__main__':
     main()
