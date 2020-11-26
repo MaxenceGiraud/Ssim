@@ -14,8 +14,10 @@ For each sim :
 
 ## Requirements 
 * [NumPy](https://numpy.org/)
-* [Matplotlib](https://matplotlib.org/) (for plots in notebooks only)
-* [Manim](https://github.com/ManimCommunity/manim) (for the animations only)
+* [Matplotlib](https://matplotlib.org/) 
+* [Manim](https://github.com/ManimCommunity/manim) (for the upcoming animations only)
+
+Some readme have written LaTeX, you can view them locally with some capable reader (e.g. VSCode) or using extensions ([here](https://addons.mozilla.org/en-US/firefox/addon/latexmathifygithub/) for Firefox).
 
 Some specific requirements may be specified in the sim readme.
 ## List of simulations
