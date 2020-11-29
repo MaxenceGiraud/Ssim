@@ -28,6 +28,7 @@ Some specific requirements may be specified in the sim readme.
 - [x] [Koch Snowflakes](ssim/Math/KochSnowflake/)
 - [ ] Other Fractals ??
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
+- [ ] Lorenz system
 
 ### Physics
 Classical : 
@@ -46,13 +47,12 @@ Quantum :
 - [ ] Helium orbitals (using [Hartree-Fock method](https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method))
 - [ ] Quantum Double Split
 
-General Relativity / Manifold :  
-- [ ] GR sim of spacetime arround massive object (see science click video on youtube on GR visualisation)
-- [ ] Geodesic/Curved space(time) (<https://youtu.be/NfqrCdAjiks>)
-- [ ] Black hole (schwarzschild, kerr)
-
+General Relativity :  
+- [ ] [Black hole Visualization](./ssim/Physics/GR/BlackHole/)
+- [ ] Spacetime behavior of spacetime arround massive object (see science click video on youtube on GR visualisation for the goal)
+  
 Cosmology :  
-- [ ] small model of a galaxy ?? (what is possible??)
+- [ ] [Galaxy sim / collisions](ssim/Physics/Cosmology/Galaxy/)
     
 Stellar Physics : 
 - [ ] Life of a star (fusion of elements, death, compute if neutron star, black hole ...)
@@ -64,7 +64,8 @@ Fluid Mechanics :
 ## External Ressources 
 - <https://www.compadre.org/osp/index.cfm>
 
-## References
+## Main References
+*(some other references may be included in the projects own readme files)*
 
 [1] R. TAYLOR, John. [Classical Mechanics.](https://www.uscibooks.com/taylor2.htm) University Science Books, 2005.   
 
