@@ -2,6 +2,8 @@
 
 Compute the Julia/Mandelbrot set
 
+## Explanations
+
 ## Examples
 Find examples in the notebook "julia.ipynb"
 

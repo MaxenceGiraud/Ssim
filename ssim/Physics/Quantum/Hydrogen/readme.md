@@ -19,7 +19,7 @@ plot_hydrogen_orbitals(n,l,m)
 plot_hydrogen_orbitals(n,l,m,posz=(-12,12))
 
 ```
-## Explainations
+## Explanations
 ### Hydrogen Wavefunction
 
 The hydrogen wavefunction equals to : 

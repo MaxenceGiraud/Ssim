@@ -1,6 +1,6 @@
 # Black Hole visualization
 
-## Explaination
+## Explanation
 
 ## TODO
 
