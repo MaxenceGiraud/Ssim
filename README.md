@@ -7,19 +7,15 @@ Personal project of Math/Physics Simulations and visualisations
 ### Author
 [Maxence Giraud](https://github.com/MaxenceGiraud/)
 
-### Todo list for each simulation
-For each sim :
-* Add readme
-* Create notebook with examples of use/ animation with manim
-
 ## Requirements 
+* [Scipy](https://www.scipy.org/)
 * [NumPy](https://numpy.org/)
 * [Matplotlib](https://matplotlib.org/) 
-* [Manim](https://github.com/ManimCommunity/manim) (for the upcoming animations only)
+* [Manim](https://github.com/ManimCommunity/manim) (for upcoming animations only)
+* Some other specific requirements may be specified in the project own readme.
 
-Some readme have written LaTeX, you can view them locally with some capable reader (e.g. VSCode) or using extensions ([here](https://addons.mozilla.org/en-US/firefox/addon/latexmathifygithub/) for Firefox).
+*N.B. :* Some readme have written LaTeX, you can view them locally with some capable reader (e.g. VSCode) or using extensions.
 
-Some specific requirements may be specified in the sim readme.
 ## List of simulations
 
 ### Mathematics
@@ -55,7 +51,7 @@ Cosmology :
 - [ ] [Galaxy sim / collisions](ssim/Physics/Cosmology/Galaxy/)
     
 Stellar Physics : 
-- [ ] Life of a star (fusion of elements, death, compute if neutron star, black hole ...)
+- [ ] Life of a star (fusion of elements, death ... What is possible ??)
 
 Fluid Mechanics :  
 - [ ] Simulate a plane flight
@@ -68,10 +64,10 @@ Fluid Mechanics :
 *(some other references may be included in the projects own readme files)*
 
 [1] R. TAYLOR, John. [Classical Mechanics.](https://www.uscibooks.com/taylor2.htm) University Science Books, 2005.   
+[2] SHANKAR, R.. Principles of Quantum Mechanics. Springer US, 2011.    
+[3] J. GRIFFITHS, David y F. SCHROETER,  Darrell. Introduction to Quantum Mechanics. Cambridge University Press, 2018.   
 
-[//]: # ([2] J. GRIFFITHS, David. Introduction to Electrodynamics. Pearson Education Limited, 2013.    
-[3] SHANKAR, R.. Principles of Quantum Mechanics. Springer US, 2011.    
-[4] J. GRIFFITHS, David y F. SCHROETER,  Darrell. Introduction to Quantum Mechanics. Cambridge University Press, 2018.    
+[//]: # ([?] J. GRIFFITHS, David. Introduction to Electrodynamics. Pearson Education Limited, 2013.    
 [4] K. KUNDU, Pijush y M. COHEN,  Ira. Fluid Mechanics. Elsevier, 2001.   
 [5] NEEDHAM, Tristan. Visual Complex Analysis. Clarendon Press, 1998.    
 [6] CARROLL, Sean. Spacetime and Geometry: An Introduction to General Relativity. Pearson, 2003.) 
