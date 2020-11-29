@@ -28,7 +28,7 @@ Some specific requirements may be specified in the sim readme.
 - [x] [Koch Snowflakes](ssim/Math/KochSnowflake/)
 - [ ] Other Fractals ??
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
-- [ ] Lorenz system
+- [x] [Lorenz system](./ssim/Math/LorenzSystem/)
 
 ### Physics
 Classical : 
