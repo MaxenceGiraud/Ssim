@@ -1,4 +1,3 @@
-#%%
 import numpy as np
 import matplotlib.pyplot as plt 
 
@@ -45,15 +44,20 @@ def waves_interferences(sources = [Source((0,-0.5)) ,Source((0,0.5))],posx=(0,10
     final_wave_intensity = final_wave **2
 
     if display :
-        plt.xlim(*posx)
-        plt.ylim(*posy)
+        
         # Wave
-        plt.imshow(final_wave_intensity.reshape(xx.shape),interpolation='sinc',cmap="inferno")
+        plt.imshow(final_wave_intensity.reshape((int(precision),int(precisiony))),interpolation='sinc',cmap="inferno")
         # Sources
         for source  in sources :
-            plt.scatter(*source.pos,c='blue')
+            posx_p = (source.pos[0]-min(posx)) / (max(posx)-min(posx))   * precision 
+            posy_p = (source.pos[1]-min(posy)) / (max(posy)-min(posy))   * precisiony 
+            plt.scatter(posx_p,posy_p,c='blue')
         plt.show()
     
-    else :
-        return final_wave_intensity
-# %%
+    return final_wave_intensity
+
+def main():
+    w=waves_interferences()
+
+if __name__ == "__main__":
+    main()

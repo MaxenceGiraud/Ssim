@@ -73,12 +73,12 @@ def juliaset(c,init_with_constant=False,posx = (-2,2),posy=(-2,2),n_iter = 100,p
         plt.imshow(log_iter_div,cmap=colormap,extent=(posx[0],posx[1],posy[0],posy[1]))
         plt.xlabel("Re(z)")
         plt.ylabel("Im(z)")
-        '''
-        if init_with_constant : 
-            plt.title('Mandelbrot Set')
-        else :
-            plt.title('Julia Set with c='+str(c)+'and '+str(inspect.getsourcelines(f)[0][0]))
-        '''
-        plt.plot()
+        plt.show()
 
     return  n_iter_diverg
+
+def main():
+    j=juliaset(0,init_with_constant=True,posy=(-1.5,1.5),posx=(-2,1.2),display=True,precision=1000,colormap='inferno')
+
+if __name__ == "__main__":
+    main()

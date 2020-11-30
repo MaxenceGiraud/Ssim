@@ -6,3 +6,4 @@ This can be used to recreate the Double split experiment, and does by default (t
 ## TODO
 - [x] Implement double split experiment
 - [x] Extend to n sources
+- [ ] Add possibility of wave blocking object
