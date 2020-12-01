@@ -50,6 +50,8 @@ $$ x\,y'' + (\alpha +1 - x)\,y' + n\,y = 0 $$
 ## TODO
 - [x] Compute wavefunction of hydrogen
 - [x] Plot orbitals
+- [ ] Compute laguerre and legendre polynomials without scipy.
+- [ ] Add possibility to fully either compute using scipy or only personnalized functions.
 - [ ] Plot 3D orbitals
   
 ## Some external references
