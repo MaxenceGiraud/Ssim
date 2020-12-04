@@ -1,13 +1,9 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from galaxy_gen import generate_spiral_galaxy
+from galaxy_gen import *
 
 
 def main():
-    g = generate_spiral_galaxy(3)
-    plt.plot(g[:,0],g[:,1],"+",c='black')
-    plt.axis('equal')
-    plt.show()
+    g = generate_3Dgalaxy(generate_2Dspiral_galaxy,n_arms=4)
+    plot_galaxy(g)
 
 if __name__ == "__main__":
     main()

@@ -49,7 +49,7 @@ General Relativity :
 - [ ] Spacetime behavior of spacetime arround massive object (see science click video on youtube on GR visualisation for the goal)
   
 Cosmology :  
-- [ ] [Galaxy sim / collisions](ssim/Physics/Cosmology/Galaxy/)
+- [ ] [Galaxy visualization / simulation / collisions](ssim/Physics/Cosmology/Galaxy/)
     
 Stellar Physics : 
 - [ ] Life of a star (fusion of elements, death ... What is possible ??)
