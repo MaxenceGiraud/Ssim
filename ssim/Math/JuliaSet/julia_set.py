@@ -38,33 +38,26 @@ def juliaset(c,init_with_constant=False,posx = (-2,2),posy=(-2,2),n_iter = 100,p
 
     '''
     # Initilize gridspace
-    precisiony = (max(posy)-min(posy))/(max(posx)-min(posx)) * precision # adapt y precision if grid not a square
+    precisiony = int((max(posy)-min(posy))/(max(posx)-min(posx)) * precision) # adapt y precision if grid not a square
 
     x = np.linspace(posx[0],posx[1],precision)
-    y = np.linspace(posy[0],posy[1],int(precisiony))
+    y = np.linspace(posy[0],posy[1],precisiony)
     xx,yy = np.meshgrid(x,y)
 
-    if init_with_constant : 
-        z = c
-        c=  xx + 1j*yy
-        n_iter_diverg = np.zeros(c.shape)
+    if init_with_constant :
+        z = c * np.ones(xx.shape,dtype=complex)
+        c =  xx + 1j*yy
     else :
         z = xx + 1j*yy
-        n_iter_diverg = np.zeros(z.shape)
+        c *= np.ones(z.shape)
 
-    # Computing the serie
+    n_iter_diverg = np.zeros(z.shape)
+    not_div = np.ones(z.shape,dtype=bool) # Index of pixels to compute (not div)
+    # Computing the serie  
     for i in range(n_iter):
-        z = f(z,c)
-
-        # Check if its gonna diverge
-        #div = (np.abs(z_new)-np.abs(z))>div_threshold  
-        #div = (np.abs(z_new)-np.abs(z))<div_threshold 
-        div = np.abs(z)>div_threshold
-
-        n_iter_diverg += i*div # if diverge, put index of divergence into table
-        #z[div] = np.nan # and stop counting for those numbers
-
-
+        z[not_div] = f(z[not_div],c[not_div])
+        not_div = np.abs(z)<div_threshold 
+        n_iter_diverg[not_div] += 1 # if diverge, put index of divergence into table
 
     log_iter_div = np.log(n_iter_diverg+1)
 
@@ -78,7 +71,7 @@ def juliaset(c,init_with_constant=False,posx = (-2,2),posy=(-2,2),n_iter = 100,p
     return  n_iter_diverg
 
 def main():
-    j=juliaset(0,init_with_constant=True,posy=(-1.5,1.5),posx=(-2,1.2),display=True,precision=1000,colormap='inferno')
+    j=juliaset(0,init_with_constant=True,posy=(-1.5,1.5),posx=(-2,1.2),display=True,precision=1000,n_iter=100,colormap='inferno')
 
 if __name__ == "__main__":
     main()
