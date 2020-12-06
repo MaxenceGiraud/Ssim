@@ -54,7 +54,7 @@ def plot_galaxy(galaxy):
         fig = plt.figure()
         ax = fig.gca(projection="3d")
         ax.set_zlim(-2,2)
-        ax.plot(galaxy[:,0],galaxy[:,1],galaxy[:,2],"+",c='black')
+        ax.plot(galaxy[:,0],galaxy[:,1],galaxy[:,2],"+",c='darkgreen')
         plt.show()
     else : 
         raise Exception

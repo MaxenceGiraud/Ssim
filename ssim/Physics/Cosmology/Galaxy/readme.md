@@ -9,6 +9,8 @@
 - [ ] Generate "realistic" Dark matter
 
 ### Simulations
+- [x] Implement Vectorized N_Body simulation
+- [ ] Find Good Init parameters (velocity, positions , masses) 
 - [ ] Single Galaxy simulation (as 3D N body system)
 - [ ] Simulate collisions
 

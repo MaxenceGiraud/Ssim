@@ -26,6 +26,10 @@ Personal project of Math/Physics Simulations and visualisations
 - [ ] Visual of analytic continuation of a function (see 3b1b video on Riemann hypothesis)
 - [x] [Lorenz system](./ssim/Math/LorenzSystem/)
 - [x] *[Game of Life](https://github.com/MaxenceGiraud/GameOfLife) (Available in another repo)*
+- [ ] Logistic Map Bifurcation diagram
+- [ ] Sierpiński triangle
+- [ ] Exponential map
+- [ ] Others from [List of chaotic maps](https://en.wikipedia.org/wiki/List_of_chaotic_maps)
 
 ### Physics
 Classical : 
