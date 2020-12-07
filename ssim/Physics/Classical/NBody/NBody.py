@@ -5,7 +5,7 @@ G = 6.674e-11
 
 def gravitation_newton(m1,m2,r):
     ''' Compute the Gravitionnal (according to Newton) force between 2 objects'''
-    return G * (m1*m2) / r
+    return G * (m1*m2) / r**2
 
 def acc(mass,other_mass,distance):
     return gravitation_newton(mass,other_mass,distance)/mass
@@ -48,10 +48,11 @@ class Body:
         dist = np.sqrt(np.sum((cm-self.pos)**2)) 
 
         f_abs = gravitation_newton(self.m,mass_others,dist)  #absolute force on the object
-        theta= np.arctan((cm[1]-self.pos[1])/(cm[0]-self.pos[0])) # angle between body and CM
 
-        f = [f_abs*np.cos(theta),f_abs*np.sin(theta)] # Transfor force from polar to euclidean coordonates
-        return f
+        f_direction = cm - self.pos # Direction of the force
+        f_dir_normed = f_direction/np.linalg.norm(f_direction) # Normalize direction vector
+
+        return f_dir_normed * f_abs
 
     def get_acceleration(self,list_bodies):
         F = self.applied_force(list_bodies)

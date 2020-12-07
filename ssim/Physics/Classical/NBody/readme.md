@@ -24,7 +24,6 @@ U.update(1000,0.1)
 
 - [x] Implement 2-Body sim
 - [x] Support for N bodies
-- [ ] Support for 3D coordonates systems
-- [ ] Optimize Computations
-- [ ] Solve using external ODE solver
+- [x] Support for any number of dimensions
+- [x] Optimize Computations (vectorized version in another subproject [here](../../Cosmology/Galaxy/simulate_nbody.py) in a non-OOP way).
 - [ ] Solve using Lagrangian mechanics (section 8 Taylor)
