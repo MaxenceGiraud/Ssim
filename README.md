@@ -64,7 +64,7 @@ Personal project of Math/Physics Simulations and visualisations
 - [x] [Lorenz system](./ssim/Math/LorenzSystem/)
 - [ ] Logistic Map Bifurcation diagram
 - [ ] Exponential map
-- [ ] Bogdanov map
+- [x] [Bogdanov map](./ssim/Math/BogdanovMap/)
 - [ ] Others from [List of chaotic maps](https://en.wikipedia.org/wiki/List_of_chaotic_maps)
 
 ## Main References
