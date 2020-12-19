@@ -1,6 +1,6 @@
 # Hydrogen simulation using Quantum Mechanics
 
-## How to 
+## Usage 
 ```python
 from quantumhydrogen import plot_hydrogen_orbitals
 
@@ -19,7 +19,7 @@ plot_hydrogen_orbitals(n,l,m)
 plot_hydrogen_orbitals(n,l,m,posz=(-12,12))
 
 ```
-## Explanations
+## Hydrogen Wave Function Equations
 ### Hydrogen Wavefunction
 
 The hydrogen wavefunction equals to : 

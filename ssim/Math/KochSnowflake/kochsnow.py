@@ -36,7 +36,6 @@ def koch_snowflake(iterations=4,anti=False,display_iter=False,display=True,vecto
         plt.figure(figsize=(10,10))
  
         plt.plot(points_np[:,0],points_np[:,1])
-        plt.axis('square')
     
     if vectorize : 
         for _ in range(iterations-1):

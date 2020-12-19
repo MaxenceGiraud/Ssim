@@ -1,11 +1,24 @@
 # Julia Set
 
-Compute the Julia/Mandelbrot set
+Compute the Julia set.
 
-## Explanations
+## Usage
 
-## Examples
-Find examples in the notebook "julia.ipynb"
+```python
+from julia_set import juliaset
+
+# Mandelbrot set
+mandel = juliaset(c=0,init_with_constant=True,display=True)
+
+# Other julia set
+j = juliaset(c=0.1-0.21j,display=True)
+```
+You can find further examples in the notebook [julia.ipynb](./julia.ipynb)
+
+## Details 
+
+*(upcoming)*
+
 
 ## TODO
 
