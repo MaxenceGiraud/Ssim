@@ -57,7 +57,7 @@ Personal project of Math/Physics Simulations and visualisations
 #### Fractals   
 - [x] [Julia/Fatou set](ssim/Math/JuliaSet/)
 - [x] [Koch Snowflakes](ssim/Math/KochSnowflake/)
-- [x] [Sierpiński triangle/carpet](./ssim/Math/Sierpinski/)
+- [x] [Sierpiński triangle/carpet/sponge](./ssim/Math/Sierpinski/)
 
 #### Chaotic Maps
 

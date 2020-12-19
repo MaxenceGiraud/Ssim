@@ -1,34 +1,41 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-def sierpinski_carpet(iter = 5,display=True,display_iter = False):
-
-    # Starting points
-    square_list = np.array([[0,0],[3**iter/2,tan_angle*3**iter/2],[3**iter,0],[0,0]]).reshape(1,4,2)
+def sierpinski_carpet(iter = 5,display=True):
 
     def draw(squares):
-        for square in squares :
-            pass
-            # TODO
+        for i in range(squares.shape[1]):
+            plt.fill(squares[:,i].real,squares[:,i].imag,c='black')
 
-    for _ in range(iter):
+    if display :
+        plt.xlim(0,1)
+        plt.ylim(0,1)
 
-        if display_iter :
-            draw(square_list)
+    for i in range(iter):
+        size = 3**i
+        x = np.arange(1,size+1)
+        y = np.arange(1,size+1)
+        xx,yy = np.meshgrid(x,y)
+        c = 1/(size+1)
+        c = (c*xx+c*yy*1j).flatten()
+        r = 1/(4+2**(3*i+1))
+        rj = r * 1j
 
-        new_squares = []
+        squares = np.zeros((4,size**2),dtype=complex)
+        squares[0] = c-r-rj
+        squares[1] = c-r+rj
+        squares[2] = c+r+rj
+        squares[3] = c+r-rj
         
-        # TODO
-
+        if display :
+            draw(squares)
     
-    if display or display_iter: 
-        draw(square_list)
+    if display : 
         plt.axis('equal')
         plt.show()
 
-    return square_list
-
 def main():
-    s=sierpinski_carpet(6)
+    sierpinski_carpet(3)
 
 if __name__ == "__main__":
     main()
