@@ -34,6 +34,7 @@ def plot_lorenz_system(rho= 28,sigma= 10,beta= 8/3):
     fig = plt.figure()
     ax = fig.gca(projection="3d")
     ax.plot(sol.y[0], sol.y[1], sol.y[2])
+    plt.axis('off')
     plt.show()
 
 def main():

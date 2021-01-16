@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def koch_snowflake(iterations=4,anti=False,display_iter=False,display=True,vectorize=True):
+def koch_snowflake(iterations=4,anti=False,display_iter=False,display=True,vectorize=True,ax= None):
     ''' Compute the points that make the koch snowflake
     Parameters
     ----------
@@ -21,6 +21,13 @@ def koch_snowflake(iterations=4,anti=False,display_iter=False,display=True,vecto
     points: array,
         list of points that makes the koch snowflake
     '''
+
+    if ax is None :
+        ax = plt.gca()
+        show = False
+    else : 
+        show = True
+
     # If anti snowflake, angle is -pi/3
     if anti :
         angle_mov = -np.pi/3
@@ -33,9 +40,8 @@ def koch_snowflake(iterations=4,anti=False,display_iter=False,display=True,vecto
 
     def draw(points):
         points_np = np.array(points)
-        plt.figure(figsize=(10,10))
  
-        plt.plot(points_np[:,0],points_np[:,1])
+        ax.plot(points_np[:,0],points_np[:,1])
     
     if vectorize : 
         for _ in range(iterations-1):
@@ -110,7 +116,8 @@ def koch_snowflake(iterations=4,anti=False,display_iter=False,display=True,vecto
     if display and not display_iter:
         draw(points)
 
-    if display or display_iter : 
+    if (display or display_iter)  and not show : 
+        plt.axis('off')
         plt.show()
     return points
 

@@ -40,12 +40,13 @@ Personal project of Math/Physics Simulations and visualisations
 - [ ] Spacetime behavior of spacetime arround massive object (see science click video on youtube on GR visualisation for the goal)
   
 #### Cosmology :  
-- [ ] [Galaxy visualization / simulation / collisions](ssim/Physics/Cosmology/Galaxy/)
+- [x] [Galaxy visualization / simulation / collisions](ssim/Physics/Cosmology/Galaxy/)
     
 #### Stellar Physics : 
 - [ ] Life of a star (fusion of elements, death ... What is possible ??)
 
-#### Fluid Mechanics :  
+#### Fluid Mechanics :   
+- [ ] Some Fluids flows (<https://www.youtube.com/watch?v=cvl0gUvofZk>)
 - [ ] Simulate a plane flight
 
 ### Mathematics
@@ -58,11 +59,13 @@ Personal project of Math/Physics Simulations and visualisations
 - [x] [Julia/Fatou set](ssim/Math/JuliaSet/)
 - [x] [Koch Snowflakes](ssim/Math/KochSnowflake/)
 - [x] [Sierpiński triangle/carpet/sponge](./ssim/Math/Sierpinski/)
+- [ ] Tetration fractals
 
 #### Chaotic Maps
 
 - [x] [Lorenz system](./ssim/Math/LorenzSystem/)
 - [ ] Logistic Map Bifurcation diagram
+- [ ] Poincaré map (e.g. Duffing eq)
 - [ ] Exponential map
 - [x] [Bogdanov map](./ssim/Math/BogdanovMap/)
 - [ ] Others from [List of chaotic maps](https://en.wikipedia.org/wiki/List_of_chaotic_maps)
