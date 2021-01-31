@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.special import eval_genlaguerre,lpmv
+from scipy.special import eval_genlaguerre,lpmv,binom,factorial
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
@@ -14,6 +14,13 @@ a= 0.529e-10 # Bohr radius
 def energy_hydrogen(n):
     ''' Compute energy of the hydrogen atom ( in J) '''
     return - (me/(2*h_bar**2) *  (e**2/(4*np.pi*eps0))**2) * 1/n**2
+
+def laguerre_assoc():
+    pass
+
+def legendre_assoc(x,l,m):
+    k = np.arange(m,l)
+    return (-1)**m * 2**l  *(1-x**2)**(m/2) * np.sum(factorial(k)/factorial(k-m) * x**(k-m) * binom(l,k)* binom((l+k-1)/2,l))
 
 def compute_radial_hydrogen(n,l,r,a= 0.529e-10):
     ''' Compute the radial part of the hydrogen atom wave function 
@@ -30,7 +37,7 @@ def compute_radial_hydrogen(n,l,r,a= 0.529e-10):
     ------
     '''
     laguerre = eval_genlaguerre(n-l-1,2*l+1,(2*r/(n*a)))
-    sqrt_term = (2/(n*a)) **3 * np.math.factorial(n-l-1)/(2*n*np.math.factorial(n+l))
+    sqrt_term = (2/(n*a)) **3 * factorial(n-l-1)/(2*n*factorial(n+l))
     exp_term = -r/(n*a)
     third_term = (2*r/(n*a))**l
     
@@ -49,8 +56,9 @@ def compute_spherical_harmonics_hydrogen(l,m,theta,phi):
     theta :
     phi : 
     '''
-    first_term = np.sqrt( ((2*l+1) * np.math.factorial(l-m)) / (4*np.pi *np.math.factorial(l+m) ) ) * np.exp(1j * m * phi) 
+    first_term = np.sqrt( ((2*l+1) * factorial(l-m)) / (4*np.pi *factorial(l+m) ) ) * np.exp(1j * m * phi) 
     legendre = lpmv(m,l,np.cos(theta))
+    # legendre = legendre_assoc(np.cos(theta),l,m)
 
     return first_term * legendre
 
@@ -103,11 +111,8 @@ def plot_hydrogen_orbitals(n=2,l=0,m=0,precision=800,posx=(-10,10),posy=(-10,10)
         probs = np.abs(hwf)
 
         # Plotting
-        #plt.imshow(probs,cmap='inferno')
         plt.plot(grid,probs)
-        #plt.axis('off')
-        title = "Radial Wave function with n="+str(n)+", l="+str(l)+", m="+str(m)
-        plt.title(title)
+        plt.title(f"Radial Wave function with n={n}, l={l}, m={m}")
         plt.show()
     
     ## 2D
@@ -156,7 +161,7 @@ def plot_hydrogen_orbitals(n=2,l=0,m=0,precision=800,posx=(-10,10),posy=(-10,10)
 def main():
 
     # 1D
-    #plot_hydrogen_orbitals(posx=(0,10),posy=None)
+    plot_hydrogen_orbitals(posx=(0,10),posy=None)
     # 2D
     plot_hydrogen_orbitals(4,1,-1)
     

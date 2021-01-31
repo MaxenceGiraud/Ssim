@@ -17,8 +17,16 @@ plot_hydrogen_orbitals(n,l,m)
 
 # 3d plot (UPCOMING)
 plot_hydrogen_orbitals(n,l,m,posz=(-12,12))
-
 ```
+
+Radial (1D) with n=2,l=0,m=0 : 
+
+![alt](./.img/200-1D.png) 
+
+2D with n=4,l=1,m=-1 :
+
+![alt](./.img/41-1-2D.png)
+
 ## Hydrogen Wave Function Equations
 ### Hydrogen Wavefunction
 

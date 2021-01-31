@@ -52,6 +52,7 @@ def waves_interferences(sources = [Source((0,-0.5)) ,Source((0,0.5))],posx=(0,10
             posx_p = (source.pos[0]-min(posx)) / (max(posx)-min(posx))   * precision 
             posy_p = (source.pos[1]-min(posy)) / (max(posy)-min(posy))   * precisiony 
             plt.scatter(posx_p,posy_p,c='blue')
+        plt.axis("off")
         plt.show()
     
     return final_wave_intensity

@@ -1,5 +1,18 @@
 # Galaxy simulation
 
+## Usage
+### Generating visuals galaxies
+```python3
+# Spiral galaxy with 4 arms :
+g1 = generate_3Dgalaxy(generate_2Dspiral_galaxy,n_arms=4)
+
+# Elliptical galaxy
+g2 = generate_3Dgalaxy(generate_2Delliptical_galaxy)
+
+#plot 
+plot_galaxy(g1)
+```
+![Spiral4](./.img/galaxy_spiral4.png)
 
 ## TODO
 ###  Creation / Visualization
