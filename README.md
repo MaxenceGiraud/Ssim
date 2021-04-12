@@ -30,7 +30,7 @@ Personal project of Math/Physics Simulations and visualisations
 - [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves)
 
 #### Quantum : 
-- [ ] Infinte/Finite square well
+- [x] [Eigenstates solver (1D & 2D)](ssim/Physics/Quantum/EigenstatesSolver/)
 - [x] [Hydrogen atom orbitals plot](ssim/Physics/Quantum/Hydrogen/)
 - [ ] Helium orbitals (using [Hartree-Fock method](https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method))
 - [ ] Quantum Double Split
@@ -48,6 +48,10 @@ Personal project of Math/Physics Simulations and visualisations
 #### Fluid Mechanics :   
 - [ ] Some Fluids flows (<https://www.youtube.com/watch?v=cvl0gUvofZk>)
 - [ ] Simulate a plane flight
+
+#### QFT
+- [ ] Computing G factor of electron/muon ?? 
+- [ ] Generating Feynman diagram
 
 ### Mathematics
 
