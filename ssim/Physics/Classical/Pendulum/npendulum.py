@@ -6,11 +6,29 @@ from copy import deepcopy
 from matplotlib import animation
 from matplotlib.animation import PillowWriter
 
-def n_pendulum(n_pendulum=2,filename="npend.gif",mass=[1,1],theta_init =None,r_init = None,v_init=None,w_init= None):
+def n_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init = None,v_init=None,w_init= None):
+    ''' Solve the N Springed pendulum problem
 
+    Params
+    ------
+    n_pendulum : int,
+        Number of Pendulums. Defaults to 2
+    filename : string, 
+        File to write the animation.
+    mass : {int,list}
+        Mass of the balls, if int all the balls have the specified mass
+    {}_init : list,
+        Initial condition of each param. Thetas are the angles between the spring, r is the radius of the spring, an v and w are the derivative of those wrt time.
+
+    Yields
+    ------
+    Create an animation and play it.
+    ''' 
+
+    print('Solving Analytical Problem')
     # Declare scalars
-    t, g, k = smp.symbols('t m g k')
-    m = smp.symbols('m')   
+    m = [smp.symbols(r'm_{}'.format(i)) for i in range(n_pendulum)]
+    t, g, k = smp.symbols('t g k')
 
     # Angles between springs and associated first and second derivative
     thetas = [smp.symbols(r'\theta_{}'.format(i), cls=smp.Function)(t) for i in range(n_pendulum)]
@@ -42,13 +60,13 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=[1,1],theta_init =None,r_i
             x[i] = x[i-1] + (1+r[i])*smp.cos(thetas[i])
             y[i] = y[i-1] - (1+r[i])*smp.sin(thetas[i])
         
-        T = T + smp.diff(x[i], t)**2 + smp.diff(y[i], t)**2 
-        V = V + m*g*y[i] + 1/2 * k * r[i]**2
+        T = T + m[i] * (smp.diff(x[i], t)**2 + smp.diff(y[i], t)**2) 
+        V = V + m[i]*g*y[i] + 1/2 * k * r[i]**2
 
-    T = 1/2*m*T
+    T = 1/2*T
     L = T-V # Lagrangian
     
-
+    print(" Calculating Lagrange Equations")
     ## Lagrange equations
     LE = [smp.diff(L,thetas[i]) - smp.diff(smp.diff(L,thetas_d[i]),t) for i in range(n_pendulum)]
     LE_r = [smp.diff(L,r[i]) - smp.diff(smp.diff(L,r_d[i]),t) for i in range(n_pendulum)]
@@ -56,12 +74,14 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=[1,1],theta_init =None,r_i
     LE.extend(LE_r) 
     LE = [LE[i].simplify() for i in range(len(LE))] 
     
+    print(" Solving systems of Lagrange equations")
     # Solve the System of equations
     params = deepcopy(thetas_dd)
     params.extend(r_dd)
     sols = smp.solve(LE, (*params),simplify=False, rational=False)
     
-    all_params = [m,k,g]
+    all_params = deepcopy(m)
+    all_params.extend([k,g])
     all_params.extend(thetas)
     all_params.extend(thetas_d)
     all_params.extend(r)
@@ -72,7 +92,7 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=[1,1],theta_init =None,r_i
     dvdt_f = [smp.lambdify(all_params,sols[r_dd[i]]) for i in range(n_pendulum)]
     drdt_f = [smp.lambdify(r_d[i], r_d[i]) for i in range(n_pendulum)]
 
-
+    print("Solve resulting differential equations")
     # Define our system of ODEs
     def dSdt(S, t):
         S_np = np.reshape(S,(int(len(S)/n_pendulum),n_pendulum))
@@ -80,15 +100,18 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=[1,1],theta_init =None,r_i
         return [
             *[dthetasdt_f[i](w[i]) for i in range(n_pendulum)],
             *[drdt_f[i](v[i]) for i in range(n_pendulum)],
-            *[dwdt_f[i](m,k,g,*thetas,*w,*r,*v)for i in range(n_pendulum)],
-            *[dvdt_f[i](m,k,g,*thetas,*w,*r,*v) for i in range(n_pendulum)]
+            *[dwdt_f[i](*m,k,g,*thetas,*w,*r,*v)for i in range(n_pendulum)],
+            *[dvdt_f[i](*m,k,g,*thetas,*w,*r,*v) for i in range(n_pendulum)]
         ]
 
 
     # Define constants
     t = np.linspace(0, 20, 1000)
     g = 9.81
-    m=1
+    if isinstance(mass,int) or isinstance(mass,float):
+        m = [mass for _ in range(n_pendulum)]
+    else :
+        m = mass
     k=10
 
     
@@ -119,7 +142,7 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=[1,1],theta_init =None,r_i
 
     x,y = get_xy(ans.T[:n_pendulum],ans.T[n_pendulum:n_pendulum*2])
 
-
+    print("Creating Animation")
     def animate(i):
         ln1.set_data([[0,*[x[j][i] for j in range(n_pendulum)]], [0,*[y[j][i] for j in range(n_pendulum)]]])
         
@@ -131,10 +154,12 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=[1,1],theta_init =None,r_i
     ani = animation.FuncAnimation(fig, animate, frames=1000, interval=50)
     ani.save(filename,writer='pillow',fps=50)
 
+    print("\n Done !")
+
 
 def main():
     filename = './npend.gif'
-    n_pendulum(filename=filename)
+    n_pendulum(filename=filename,mass=[5,0.1])
 
     import os, sys, subprocess
 
