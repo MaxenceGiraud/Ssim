@@ -145,12 +145,14 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init 
     print("Creating Animation")
     def animate(i):
         ln1.set_data([[0,*[x[j][i] for j in range(n_pendulum)]], [0,*[y[j][i] for j in range(n_pendulum)]]])
-        
+    
+    plt.style.use('dark_background')
     fig, ax = plt.subplots(1,1, figsize=(8,8))
     ax.grid()
+    ax.axis('off')
     ln1, = plt.plot(*[[] for _ in range(n_pendulum)], 'ro--', lw=2.5, markersize=10)
-    ax.set_ylim(-10, 10)
-    ax.set_xlim(-15,10)
+    ax.set_ylim(-15, 10)
+    ax.set_xlim(-10,10)
     ani = animation.FuncAnimation(fig, animate, frames=1000, interval=50)
     ani.save(filename,writer='pillow',fps=50)
 
@@ -159,7 +161,7 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init 
 
 def main():
     filename = './npend.gif'
-    n_pendulum(filename=filename,mass=[5,0.1])
+    n_pendulum(filename=filename,mass=[1,1.3])
 
     import os, sys, subprocess
 
