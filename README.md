@@ -22,8 +22,9 @@ Personal project of Math/Physics Simulations and visualisations
 #### Classical : 
 - [x] [N body Simulations](ssim/Physics/Classical/NBody/)
 - [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
-- [ ] [Rocket](ssim/Physics/Classical/Rocket/)   
-- [ ] [N Springed Pendulum system](ssim/Physics/Classical/Pendulum/)
+- [ ] [Rocket](ssim/Physics/Classical/Rocket/)  
+- [x] [N Linked Pendulum](ssim/Physics/Classical/LinkedPendulum/) 
+- [x] [N Springed Pendulum system](ssim/Physics/Classical/SpringedPendulum/)
 - [ ] N Coupled Pendulum
 - [ ] Foucault pendulum
   
