@@ -6,7 +6,6 @@ from copy import deepcopy
 from matplotlib import animation
 from matplotlib.animation import PillowWriter
 from functools import partial
-import os
 
 def linked_pend_analytical(n_pendulum):
     m = [smp.symbols(r'm_{}'.format(i)) for i in range(n_pendulum)] # mass
