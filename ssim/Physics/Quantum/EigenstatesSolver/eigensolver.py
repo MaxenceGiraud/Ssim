@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import scipy.sparse
 import scipy.sparse.linalg as sparsealg
 
-from potentials import infinite_well_2D,Gaussian_2D,point_charge_2D
+from potentials import infinite_well_2D,Gaussian_2D
 
 def compute_1D_eigenstates(potential,x=np.linspace(0,1,100)):
     N = len(x)
@@ -86,22 +86,6 @@ def main():
     plt.axis("off")
     plt.tight_layout()
     plt.show()
-
-    # 2D Point Charge
-    states_to_plot = np.arange(1,17)
-    fig,ax = plt.subplots(4,4,figsize=(15,15))
-    eigen_vec = compute_2D_eigenstates(point_charge_2D,n_states=np.max(states_to_plot))
-
-    for i in states_to_plot :
-        ax[(i-1)%4,int((i-1)/4)].contourf(eigen_vec[i-1].reshape(100,100)**2)
-        ax[(i-1)%4,int((i-1)/4)].set_title(f"N={i}")
-        ax[(i-1)%4,int((i-1)/4)].axis("off")
-    
-    plt.suptitle("Point Charge")
-    plt.axis("off")
-    plt.tight_layout()
-    plt.show()
-
 
 
 if __name__ == "__main__":

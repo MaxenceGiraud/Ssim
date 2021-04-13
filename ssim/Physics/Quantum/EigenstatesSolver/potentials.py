@@ -17,6 +17,3 @@ def Gaussian_1D(x,mu=0.5,sigma=0.1):
 
 def Gaussian_2D(x,y,mu_x = 0.3,mu_y=0.3,sigma_x=0.1,sigma_y=0.1):
     return np.exp(-(x-mu_x)**2/(2*sigma_x**2))*np.exp(-(y-mu_y)**2/(2*sigma_y**2))
-
-def point_charge_2D(x,y,charge_pos = (0.5,0.5)):
-    return 1/30*np.sqrt((x-charge_pos[0])**2+(y-charge_pos[1])**2)

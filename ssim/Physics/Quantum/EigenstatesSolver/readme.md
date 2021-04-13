@@ -17,8 +17,6 @@ If you run the eigensovler file you should get the following output :
 
 ![alt](./.img/infinite_well_2d.png) 
 
-![alt](./.img/point_charge_2d.png) 
-
 ## References
 
 Code originally based on <https://github.com/lukepolson/youtube_channel>
