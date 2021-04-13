@@ -109,6 +109,7 @@ def n_linked_pendulum(n_pendulum=2,filename="npend.gif",mass=1,lenght=2,theta_in
         m = [mass for _ in range(n_pendulum)]
     else :
         m = mass
+
     if isinstance(lenght,int) or isinstance(lenght,float):
         l = [lenght for _ in range(n_pendulum)]
     else :
@@ -117,7 +118,7 @@ def n_linked_pendulum(n_pendulum=2,filename="npend.gif",mass=1,lenght=2,theta_in
     ode_sys = partial(linked_pend_analytical(n_pendulum=n_pendulum),m,l,g)
 
     if theta_init is None : 
-        theta_init = [-np.pi/(4*i) for i in range(1,n_pendulum)]
+        theta_init = [-np.pi/(4*i) for i in range(1,n_pendulum+1)]
     w_init = [0 for i in range(n_pendulum)]
 
     print("Solve resulting differential equations")
@@ -145,7 +146,7 @@ def n_linked_pendulum(n_pendulum=2,filename="npend.gif",mass=1,lenght=2,theta_in
     fig, ax = plt.subplots(1,1, figsize=(8,8))
     ax.grid()
     ax.axis('off')
-    ln1, = plt.plot([],[], 'ro--', lw=2.5, markersize=10)
+    ln1, = plt.plot([],[], 'ro--', lw=2.8, markersize=10)
     ax.set_ylim(-15, 10)
     ax.set_xlim(-10,10)
     ani = animation.FuncAnimation(fig, animate, frames=1000, interval=50)
