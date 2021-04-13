@@ -6,7 +6,7 @@ from copy import deepcopy
 from matplotlib import animation
 from matplotlib.animation import PillowWriter
 
-def n_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init = None,v_init=None,w_init= None):
+def n_springed_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init = None,v_init=None,w_init= None):
     ''' Solve the N Springed pendulum problem
 
     Params
@@ -117,7 +117,7 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init 
     
     # Solve ODEs
     if theta_init is None : 
-        theta_init = np.array([np.pi/2,(3/2)*np.pi/2,np.pi])[:n_pendulum]
+        theta_init = [-np.pi/(4*i) for i in range(1,n_pendulum)]
     if r_init is None : 
         r_init = [0 for i in range(n_pendulum)]
     if w_init is None : 
@@ -161,7 +161,7 @@ def n_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init 
 
 def main():
     filename = './npend.gif'
-    n_pendulum(filename=filename,mass=[1,1.3])
+    n_springed_pendulum(filename=filename,mass=[1,1.3])
 
     import os, sys, subprocess
 

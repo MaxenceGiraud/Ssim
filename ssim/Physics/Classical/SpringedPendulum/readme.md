@@ -4,7 +4,7 @@
 
 ## How to use 
 ```python 
-from npendulum import n_pendulum
+from npendulum import n_springed_pendulum
 
 n_pendulum(n_pendulum=2,filename="2_pendulum.gif",mass=[1,2])
 ```
