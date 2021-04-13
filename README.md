@@ -23,7 +23,8 @@ Personal project of Math/Physics Simulations and visualisations
 - [x] [N body Simulations](ssim/Physics/Classical/NBody/)
 - [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
 - [ ] [Rocket](ssim/Physics/Classical/Rocket/)   
-- [ ] N Pendulum system
+- [ ] [N Springed Pendulum system](ssim/Physics/Classical/Pendulum/)
+- [ ] N Coupled Pendulum
 - [ ] Foucault pendulum
   
 #### Wave :
@@ -50,7 +51,6 @@ Personal project of Math/Physics Simulations and visualisations
 - [ ] Simulate a plane flight
 
 #### QFT
-- [ ] Computing G factor of electron/muon ?? 
 - [ ] Generating Feynman diagram
 
 ### Mathematics
