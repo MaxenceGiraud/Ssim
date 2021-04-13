@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 from matplotlib import animation
 from matplotlib.animation import PillowWriter
 
-def two_pendulum():
+def two_pendulum(masses=[1,1]):
     print("Solving Analytical Problem")
-    t, m, g, k = smp.symbols('t m g k')
+    t, m1,m2, g, k = smp.symbols(r't m_1 m_2 g k')
 
     the1, the2, r1, r2 = smp.symbols(r'\theta_1, \theta_2, r_1, r_2', cls=smp.Function)
 
@@ -42,9 +42,8 @@ def two_pendulum():
 
     print("Computing Lagrangian")
     ## Lagrangian
-    T = 1/2 * m * (smp.diff(x1, t)**2 + smp.diff(y1, t)**2 + \
-            smp.diff(x2, t)**2 + + smp.diff(y2, t)**2)
-    V = m*g*y1 + m*g*y2 + 1/2 * k * r1**2 + 1/2 * k * r2**2
+    T = 1/2 * m1 * (smp.diff(x1, t)**2 + smp.diff(y1, t)**2)+ 1/2 * m2 * (smp.diff(x2, t)**2 + + smp.diff(y2, t)**2)
+    V = m1*g*y1 + m2*g*y2 + 1/2 * k * r1**2 + 1/2 * k * r2**2
     L = T-V
 
     print("Computing Lagrange Equations")
@@ -67,9 +66,38 @@ def two_pendulum():
 
     
     print("Solving the systems of DE")
+
+
+    dw1dt_f = smp.lambdify((m1,m2, k ,g, the1, the2, r1, r2, the1_d, the2_d, r1_d, r2_d), sols[the1_dd])
+    dthe1dt_f = smp.lambdify(the1_d, the1_d)
+
+    dw2dt_f = smp.lambdify((m1,m2, k ,g, the1, the2, r1, r2, the1_d, the2_d, r1_d, r2_d), sols[the2_dd])
+    dthe2dt_f = smp.lambdify(the2_d, the2_d)
+
+    dv1dt_f = smp.lambdify((m1,m2, k ,g, the1, the2, r1, r2, the1_d, the2_d, r1_d, r2_d), sols[r1_dd])
+    dr1dt_f = smp.lambdify(r1_d, r1_d)
+
+    dv2dt_f = smp.lambdify((m1,m2, k ,g, the1, the2, r1, r2, the1_d, the2_d, r1_d, r2_d), sols[r2_dd])
+    dr2dt_f = smp.lambdify(r2_d, r2_d)
+
+
+    def dSdt(S, t):
+        the1, w1, the2, w2, r1, v1, r2, v2 = S
+        return [
+            dthe1dt_f(w1),
+            dw1dt_f(m1,m2,k,g,the1,the2,r1,r2,w1,w2,v1,v2),
+            dthe2dt_f(w2),
+            dw2dt_f(m1,m2,k,g,the1,the2,r1,r2,w1,w2,v1,v2),
+            dr1dt_f(v1),
+            dv1dt_f(m1,m2,k,g,the1,the2,r1,r2,w1,w2,v1,v2),
+            dr2dt_f(v2),
+            dv2dt_f(m1,m2,k,g,the1,the2,r1,r2,w1,w2,v1,v2),
+        ]
+
     t = np.linspace(0, 20, 1000)
     g = 9.81
-    m=1
+    m1 = masses[0]
+    m2 = masses[1]
     k=10
     ans = odeint(dSdt, y0=[np.pi/2,0,(3/2)*np.pi/2,0,0,5,0,5], t=t)
 
@@ -89,7 +117,7 @@ def two_pendulum():
     def animate(i):
         ln1.set_data([0, x1[i], x2[i]], [0, y1[i], y2[i]])
     
-    fig, ax = plt.subplots(1,1, figsize=(8,8))
+    fig, ax = plt.subplots(1,1, figsize=(3,3))
     ax.grid()
     ln1, = plt.plot([], [], 'ro--', lw=3, markersize=8)
     ax.set_ylim(-15, 10)
@@ -98,3 +126,20 @@ def two_pendulum():
     ani.save('2pendulum.gif',writer='pillow',fps=50)
 
     print("Done !")
+
+def main():
+    two_pendulum()
+    filename = './2pendulum.gif'
+    import os, sys, subprocess
+
+    def open_file(filename):
+        if sys.platform == "win32":
+            os.startfile(filename)
+        else:
+            opener = "open" if sys.platform == "darwin" else "xdg-open"
+            subprocess.call([opener, filename])
+        
+    open_file(filename)
+
+if __name__ == "__main__":
+    main()
