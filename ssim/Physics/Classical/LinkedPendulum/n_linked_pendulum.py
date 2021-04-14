@@ -78,9 +78,7 @@ def linked_pend_analytical(n_pendulum):
 
     return dSdt
 
-
-
-def n_linked_pendulum(n_pendulum=2,filename="npend.gif",mass=1,lenght=2,theta_init =None):
+def n_linked_pendulum(n_pendulum=2,time=50,filename="npend.gif",mass=1,lenght=2,theta_init =None):
     ''' Solve the N Linked pendulum problem
 
     Params
@@ -101,7 +99,7 @@ def n_linked_pendulum(n_pendulum=2,filename="npend.gif",mass=1,lenght=2,theta_in
     Create an animation and play it.
     ''' 
     
-    t = np.linspace(0, 20, 1000)
+    t = np.linspace(0, time, time*30)
     g = 9.81
 
     if isinstance(mass,int) or isinstance(mass,float):
@@ -120,7 +118,7 @@ def n_linked_pendulum(n_pendulum=2,filename="npend.gif",mass=1,lenght=2,theta_in
         theta_init = [-np.pi/(4*i) for i in range(1,n_pendulum+1)]
     w_init = [0 for i in range(n_pendulum)]
 
-    print("Solve resulting differential equations")
+    print("Solving resulting differential equations numerically")
     ans = odeint(ode_sys, y0=[*theta_init,*w_init], t=t)
 
     # Compute x,y coordonates
@@ -148,14 +146,14 @@ def n_linked_pendulum(n_pendulum=2,filename="npend.gif",mass=1,lenght=2,theta_in
     ln1, = plt.plot([],[], 'ro--', lw=2.8, markersize=10)
     ax.set_ylim(-15, 10)
     ax.set_xlim(-10,10)
-    ani = animation.FuncAnimation(fig, animate, frames=1000, interval=50)
-    ani.save("n_pendulum.gif",writer='pillow',fps=50)
+    ani = animation.FuncAnimation(fig, animate, frames=time*30, interval=50)
+    ani.save(filename,writer='pillow',fps=30)
 
-    print("\n Done !")  
+    print("\n Done !\n")  
 
 if __name__ == "__main__":
-    filename = "n_pendulum.gif"
-    n_linked_pendulum(filename =filename)
+    filename = "n_pendulum_123.gif"
+    n_linked_pendulum(n_pendulum=3,filename =filename,mass=[1,2,3])
 
     import sys,subprocess
 
