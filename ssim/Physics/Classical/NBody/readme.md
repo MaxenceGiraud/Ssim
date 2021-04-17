@@ -2,9 +2,10 @@
 
 N-Body Simulation using Newton's Laws
 
-![alt](.img/nbody.gif)
 
-![alt](.img/nbody.mp4)
+https://user-images.githubusercontent.com/24920752/115122080-913c4b00-9fa5-11eb-806d-71617ab46a85.mp4
+
+
 
 ## TODO
 
