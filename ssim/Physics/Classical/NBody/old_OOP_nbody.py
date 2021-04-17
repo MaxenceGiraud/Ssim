@@ -1,7 +1,7 @@
 import numpy as np
 
 ## Constant definitions
-G = 6.674e-11
+G = 1 #6.674e-11
 
 def gravitation_newton(m1,m2,r):
     ''' Compute the Gravitionnal (according to Newton) force between 2 objects'''
@@ -68,6 +68,9 @@ class Universe:
     def __init__(self,list_bodies):
         self.bodies = list_bodies
         self.n_bodies = len(self.bodies)
+    
+    def get_pos_bodies(self):
+        return [b.pos for b in self.bodies]
     
     def add_body(self,body):
         self.bodies.append(body)
