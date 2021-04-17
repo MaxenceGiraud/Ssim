@@ -11,7 +11,6 @@ Personal project of Math/Physics Simulations and visualisations
 * [SciPy](https://www.scipy.org/)
 * [NumPy](https://numpy.org/)
 * [Matplotlib](https://matplotlib.org/) 
-* [Manim](https://github.com/ManimCommunity/manim) (for upcoming animations only)
 * Some other specific requirements may be specified in the project own readme.
 
 *N.B. :* Some readme have written LaTeX, you can view them locally with some capable reader (e.g. VSCode) or using extensions.
@@ -22,13 +21,14 @@ Personal project of Math/Physics Simulations and visualisations
 #### Classical : 
 - [x] [N body Simulations](ssim/Physics/Classical/NBody/)
 - [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
-- [ ] [Rocket](ssim/Physics/Classical/Rocket/)  
+- [ ] [Rocket](ssim/Physics/Classical/Rocket/)  (Temporarly stopped working on it) 
 - [x] [N Linked Pendulum](ssim/Physics/Classical/LinkedPendulum/) 
 - [x] [N Springed Pendulum system](ssim/Physics/Classical/SpringedPendulum/)
 - [ ] N Coupled Pendulum
+- [ ] N Coupled Mass
 - [ ] Foucault pendulum
   
-#### Wave :
+#### Waves :
 - [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves)
 
 #### Quantum : 
@@ -39,7 +39,7 @@ Personal project of Math/Physics Simulations and visualisations
 
 #### General Relativity :  
 - [ ] [Black hole Visualization](./ssim/Physics/GR/BlackHole/)
-- [ ] Spacetime behavior of spacetime arround massive object (see science click video on youtube on GR visualisation for the goal)
+- [ ] Spacetime behavior of spacetime arround massive object (see science click video on youtube on GR visualisation for the goal of this visualization)
   
 #### Cosmology :  
 - [x] [Galaxy visualization / simulation / collisions](ssim/Physics/Cosmology/Galaxy/)
@@ -49,7 +49,7 @@ Personal project of Math/Physics Simulations and visualisations
 
 #### Fluid Mechanics :   
 - [ ] Some Fluids flows (<https://www.youtube.com/watch?v=cvl0gUvofZk>)
-- [ ] Simulate a plane flight
+- [ ] Simulate a air flow arround a plane wing
 
 #### QFT
 - [ ] Generating Feynman diagram
