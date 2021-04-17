@@ -203,18 +203,18 @@ def create_animation(pos,filename="nbody.mp4",play=True):
     def animate(i):
         ln1.set_xdata(pos[i,:,0])
         ln1.set_ydata(pos[i,:,1])
-        ln2.set_xdata(pos[max(i-30,0):i+1,:,0].flatten())
-        ln2.set_ydata(pos[max(i-30,0):i+1,:,1].flatten())
+        ln2.set_xdata(pos[max(i-30,0):i,:,0].flatten())
+        ln2.set_ydata(pos[max(i-30,0):i,:,1].flatten())
 
     plt.style.use('dark_background')
-    fig, ax = plt.subplots(1,1, figsize=(8,8))
+    fig, ax = plt.subplots(1,1, figsize=(15,15))
     ax.grid()
     ax.axis('off')
     ax.set_ylim(-2, 2)
     ax.set_xlim(-2,2)
 
     ln1, = ax.plot([],[],'o',markersize=8,c='red',zorder=1)
-    ln2, = plt.plot([],[],'o',c='white',alpha=0.05,zorder=-1)
+    ln2, = ax.plot([],[],'o',c='white',alpha=0.05,zorder=-1)
 
     ani = animation.FuncAnimation(fig, animate, frames=pos.shape[0], interval=50)
     ani.save(filename,writer=animation.FFMpegWriter(fps=25))
@@ -233,7 +233,34 @@ def create_animation(pos,filename="nbody.mp4",play=True):
             
         open_file(filename)
 
-  
+def create_3D_animation(pos,filename='nbody_3D.mp4'):
+    h_points = 30
+    def animate(i):
+        ln1.set_data([pos[i,:,0],pos[i,:,1]])
+        ln1.set_3d_properties(pos[i,:,2])
+
+        # Trace history of particles
+        for j,ln in enumerate(lnh) : 
+            idx = i - h_points + j
+            if idx >= 0 :
+                ln.set_data([pos[idx,:,0],pos[idx,:,1]])
+                ln.set_3d_properties(pos[idx,:,2])
+            else : 
+                ln.set_data(np.array([[],[]]))
+                ln.set_3d_properties(np.array([]))
+    
+    plt.style.use('dark_background')
+    fig = plt.figure(figsize=(15,15))
+    ax = fig.add_subplot(111,projection="3d")
+    ax.axis("off")
+    
+
+    ln1, = ax.plot(pos[0,:,0],pos[0,:,1],pos[0,:,2],'o',c='red')
+    lnh = [ax.plot([],[],[],'o',c='white',alpha=0.05,zorder=-1)[0] for _ in range(h_points)]
+
+    ani = animation.FuncAnimation(fig, animate, frames=pos.shape[0], interval=50)
+    ani.save(filename,writer=animation.FFMpegWriter(fps=25))
+
 if __name__== "__main__":
-    pos,mass,vel = generate_initial_conditions(randomseed=42)
-    pos_h = n_body(pos,mass,vel)
+    pos,mass,vel = generate_initial_conditions(N=50,randomseed=42)
+    pos_h = n_body(pos,mass,vel,tEnd = 5)
