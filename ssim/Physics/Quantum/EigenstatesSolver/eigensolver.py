@@ -10,9 +10,10 @@ def compute_1D_eigenstates(potential,x=np.linspace(0,1,100)):
     N = len(x)
     dx = 1/N
 
-    d = 1/dx**2 + potential(x)[1:-1]
-    e = -1/(2*dx**2) * np.ones(len(d)-1)    
+    d = 1/dx**2 + potential(x) # Diagonal element of the matrix
+    e = -1/(2*dx**2) * np.ones(len(d)-1) # Off-diagonal element of the matrix
 
+    # Compute eigenvectors
     _, eigen_v = eigh_tridiagonal(d, e)
 
     return eigen_v.T
@@ -22,7 +23,7 @@ def plot_1D_eigenstates(potential,x_range=np.linspace(0,1,100),n_states=5):
     eigen_v = compute_1D_eigenstates(potential,x_range)
 
     for i in range(n_states):
-        plt.plot(x_range[1:-1],eigen_v[i],label=f"N={i}")
+        plt.plot(x_range,eigen_v[i],label=f"N={i}")
     
     plt.legend()
     plt.show()
@@ -35,13 +36,17 @@ def compute_2D_eigenstates(potential,grid_range=(0,1),precision=100,n_states= 5)
     # Compute potential on grid
     V = potential(x,y)
 
+    # 3  Diagonal elements 
     diag = np.ones(precision)
     diags = np.array([diag, -2*diag, diag])
     D = scipy.sparse.spdiags(diags, np.array([-1,0,1]), precision, precision)
+
+    # Transform into a proper matrix
     T = -1/2 * scipy.sparse.kronsum(D,D)
     U = scipy.sparse.diags(V.reshape(precision**2), (0))
     H = T+U 
 
+    # Compute eigenvectors (only those corresponding to smallest eigenvalues)
     _, eigen_vec = sparsealg.eigsh(H, k=n_states, which='SM')
 
     return eigen_vec.T
