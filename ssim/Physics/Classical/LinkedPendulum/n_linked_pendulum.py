@@ -4,18 +4,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 from copy import deepcopy
 from matplotlib import animation
-from matplotlib.animation import PillowWriter
 from functools import partial
 
 def linked_pend_analytical(n_pendulum):
+
+    # Declare variables
     m = [smp.symbols(r'm_{}'.format(i)) for i in range(n_pendulum)] # mass
     l = [smp.symbols(r'L_{}'.format(i)) for i in range(n_pendulum)] # lenght of roap
-    t, g = smp.symbols('t g')
+    t, g = smp.symbols('t g') # time param, and gravity constant
 
     # Angles between springs and associated first and second derivative
     thetas = [smp.symbols(r'\theta_{}'.format(i), cls=smp.Function)(t) for i in range(n_pendulum)]
-    thetas_d = [smp.diff(thetas[i],t) for i in range(n_pendulum)]
-    thetas_dd = [smp.diff(thetas_d[i],t) for i in range(n_pendulum)]
+    thetas_d = [smp.diff(thetas[i],t) for i in range(n_pendulum)] # First derivative
+    thetas_dd = [smp.diff(thetas_d[i],t) for i in range(n_pendulum)] # Second derivative
 
     # Position of balls
     x = [smp.symbols(r'x_{}'.format(i), cls=smp.Function) for i in range(n_pendulum)]
@@ -78,7 +79,7 @@ def linked_pend_analytical(n_pendulum):
 
     return dSdt
 
-def n_linked_pendulum(n_pendulum=2,time=50,filename="npend.gif",mass=1,lenght=2,theta_init =None):
+def n_linked_pendulum(n_pendulum=2,time=50,filename="npend.mp4",mass=1,lenght=2,theta_init =None):
     ''' Solve the N Linked pendulum problem
 
     Params
@@ -143,16 +144,16 @@ def n_linked_pendulum(n_pendulum=2,time=50,filename="npend.gif",mass=1,lenght=2,
     fig, ax = plt.subplots(1,1, figsize=(8,8))
     ax.grid()
     ax.axis('off')
-    ln1, = plt.plot([],[], 'ro--', lw=2.8, markersize=10)
+    ln1, = plt.plot([],[], 'ro-', lw=2.8, markersize=10)
     ax.set_ylim(-15, 10)
     ax.set_xlim(-10,10)
     ani = animation.FuncAnimation(fig, animate, frames=time*30, interval=50)
-    ani.save(filename,writer='pillow',fps=30)
+    ani.save(filename,writer=animation.FFMpegWriter(fps=30))
 
     print("\n Done !\n")  
 
 if __name__ == "__main__":
-    filename = "n_pendulum_123.gif"
+    filename = "3_pendulum_123.mp4"
     n_linked_pendulum(n_pendulum=3,filename =filename,mass=[1,2,3])
 
     import sys,subprocess

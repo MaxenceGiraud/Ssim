@@ -4,9 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from copy import deepcopy
 from matplotlib import animation
-from matplotlib.animation import PillowWriter
 
-def n_springed_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =None,r_init = None,v_init=None,w_init= None):
+def n_springed_pendulum(n_pendulum=2,filename="npend.mp4",mass=1,theta_init =None,r_init = None,v_init=None,w_init= None):
     ''' Solve the N Springed pendulum problem
 
     Params
@@ -154,7 +153,7 @@ def n_springed_pendulum(n_pendulum=2,filename="npend.gif",mass=1,theta_init =Non
     ax.set_ylim(-15, 10)
     ax.set_xlim(-10,10)
     ani = animation.FuncAnimation(fig, animate, frames=1000, interval=50)
-    ani.save(filename,writer='pillow',fps=50)
+    ani.save(filename,writer=animation.FFMpegWriter(fps=50))
 
     print("\n Done !")
 

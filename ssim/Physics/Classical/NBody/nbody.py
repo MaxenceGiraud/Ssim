@@ -13,7 +13,7 @@ def getAcc( pos, mass, G, softening):
     G : float,
         Newton's Gravitational constant
     softening : float,
-        Softening length
+        Softening length, added to the distance between two particles to prevent too close particles to get huge/infinite acceleration
 
     Yields
     ------
@@ -112,7 +112,7 @@ def n_body(pos,mass,vel,tEnd=10.0,dt=0.01,softening=0.1,G = 1.0,plot_energy=True
     dt : float,
         Timestep duration
     softening : float,
-        softening length
+        Softening length, added in the computation to the distance between two particles to prevent too close particles to get huge/infinite acceleration
     G : float,
         Newton's Gravitational Constant
     plot_energy : bool,
