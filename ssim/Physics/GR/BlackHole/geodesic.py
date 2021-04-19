@@ -59,9 +59,9 @@ def compute_geodesic(alpha,D=50,dphi = np.pi/(360*60),n_iter_max=50000):
 def main():
     import matplotlib.pyplot as plt
 
-    alpha=np.linspace(0,np.pi/2,20)
-    D=50
-    dh,inside_bh = compute_geodesic(alpha=alpha)
+    alpha=np.linspace(0,np.pi/4,20)
+    D=20
+    dh,inside_bh = compute_geodesic(alpha=alpha,D=D)
     phi = np.arange(0,50000*np.pi/(360*60),np.pi/(360*60))
 
     dh_cut = []
@@ -76,21 +76,22 @@ def main():
             dh_cut.append(dh[i,:min(zer)])
 
     fig, ax = plt.subplots(figsize=(10,10))
-    [ax.plot(np.sin(phi[:len(dh_cut[i])]) * dh_cut[i],np.cos(phi[:len(dh_cut[i])]) * dh_cut[i],c="grey") for i in range(int(dh.shape[0]))]
+    [[ax.plot(np.sin(phi[:len(dh_cut[i])]) * dh_cut[i],np.cos(phi[:len(dh_cut[i])]) * dh_cut[i],c="grey",zorder=1),ax.plot(-np.sin(phi[:len(dh_cut[i])]) * dh_cut[i],np.cos(phi[:len(dh_cut[i])]) * dh_cut[i],c="grey",zorder=1)] for i in range(int(dh.shape[0]))]
     ax.set_xlim((-D,D))
     ax.set_ylim((-D,D+D/5))
 
     ax.invert_yaxis()
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.scatter(0,D,c='red',label='Observer') # Observer
+    ax.scatter(0,D,s=3,c='red',label='Observer',zorder=2) # Observer
 
-    bh = plt.Circle((0, 0), 1, color='black',label='Black Hole')# Black hole
+    bh = plt.Circle((0, 0), 1, color='black',label='Black Hole',zorder=2)# Black hole
     ax.add_patch(bh)
     plt.gca().set_aspect('equal', adjustable='box')
     ax.legend()
 
     plt.tight_layout()
+    plt.savefig('geodesic.png')
     plt.show()
 
 

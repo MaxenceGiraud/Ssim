@@ -4,6 +4,8 @@ Equations used to create this visualization are available in the [eq.md](eq.md) 
 
 ## Geodesics
 
+Here we visualize the paths of the light that the observer sees.
+
 ## TODO
 
 - [x] Write the correct equations to solve 
