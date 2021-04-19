@@ -6,6 +6,9 @@ Equations used to create this visualization are available in the [eq.md](eq.md) 
 
 Here we visualize the paths of the light that the observer sees.
 
+![geodesics](https://user-images.githubusercontent.com/24920752/115261855-83accf80-a123-11eb-8ade-ed07b8f1c87c.png)
+
+
 ## TODO
 
 - [x] Write the correct equations to solve 
