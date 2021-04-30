@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import scipy.sparse
 import scipy.sparse.linalg as sparsealg
 
-from potentials import infinite_well_2D,Gaussian_2D
-
 def compute_1D_eigenstates(potential,x=np.linspace(0,1,100)):
     N = len(x)
     dx = 1/N
@@ -19,7 +17,7 @@ def compute_1D_eigenstates(potential,x=np.linspace(0,1,100)):
     return eigen_v.T
 
 
-def plot_1D_eigenstates(potential,x_range=np.linspace(0,1,100),n_states=5):
+def plot_1D_eigenstates(potential,x_range=np.linspace(0,1,1000),n_states=5):
     eigen_v = compute_1D_eigenstates(potential,x_range)
 
     for i in range(n_states):
@@ -62,6 +60,8 @@ def plot_2D_eigenstates(potential,grid_range=(0,1),precision=100,states_to_plot=
         plt.show()
     
 def main():
+    from potentials import infinite_well_2D,Gaussian_2D,finite_circular_well_2D,finite_square_well_2D
+
     # 2D infinite Well
     states_to_plot = np.arange(1,17)
     fig,ax = plt.subplots(4,4,figsize=(15,15))
@@ -88,6 +88,21 @@ def main():
         ax[(i-1)%4,int((i-1)/4)].axis("off")
     
     plt.suptitle("Gaussian potential")
+    plt.axis("off")
+    plt.tight_layout()
+    plt.show()
+
+    Circular Well
+    states_to_plot = np.arange(1,17)
+    fig,ax = plt.subplots(4,4,figsize=(15,15))
+    eigen_vec = compute_2D_eigenstates(finite_square_well_2D,n_states=np.max(states_to_plot))
+
+    for i in states_to_plot :
+        ax[(i-1)%4,int((i-1)/4)].contourf(eigen_vec[i-1].reshape(100,100)**2)
+        ax[(i-1)%4,int((i-1)/4)].set_title(f"N={i}")
+        ax[(i-1)%4,int((i-1)/4)].axis("off")
+    
+    plt.suptitle("Circular Well")
     plt.axis("off")
     plt.tight_layout()
     plt.show()
