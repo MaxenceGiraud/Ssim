@@ -1,6 +1,6 @@
 # Ssim -Scientific Simulations
 
-Personal project of Math/Physics Simulations and visualisations
+Collection of personal projects of Math/Physics Simulations and visualisations
 
 
 ## Contributions

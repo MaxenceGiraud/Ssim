@@ -1,5 +1,7 @@
 # Eigenstates Solver
 
+Solve the time independant Schrödinger equation for potential in 1D and 2D.
+
 ## How to use 
 ```python
 # Define your potential
