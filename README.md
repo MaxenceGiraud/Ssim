@@ -18,7 +18,7 @@ Collection of personal projects of Math/Physics Simulations and visualisations
 ## List of simulations
 
 ### Physics
-#### Classical : 
+#### Classical
 - [x] [N body Simulations](ssim/Physics/Classical/NBody/)
 - [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
 - [ ] [Rocket](ssim/Physics/Classical/Rocket/)  (Temporarly stopped working on it) 
@@ -28,26 +28,31 @@ Collection of personal projects of Math/Physics Simulations and visualisations
 - [ ] N Coupled Mass
 - [ ] Foucault pendulum
   
-#### Waves :
+#### Waves
 - [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves)
 
-#### Quantum : 
+
+#### E&M
+- [x] [Electric Field Visualization](ssim/Physics/EM/ElectricField/)
+
+
+#### Quantum 
 - [x] [Eigenstates solver (1D & 2D)](ssim/Physics/Quantum/EigenstatesSolver/)
 - [x] [Hydrogen atom orbitals plot](ssim/Physics/Quantum/Hydrogen/)
 - [ ] Helium orbitals (using [Hartree-Fock method](https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method))
 - [ ] Quantum Double Split
 
-#### General Relativity :  
+#### General Relativity 
 - [ ] [Black hole Visualization](./ssim/Physics/GR/BlackHole/)
 - [ ] Spacetime behavior of spacetime arround massive object (see science click video on youtube on GR visualisation for the goal of this visualization)
   
-#### Cosmology :  
+#### Cosmology 
 - [x] [Galaxy visualization / simulation / collisions](ssim/Physics/Cosmology/Galaxy/)
     
-#### Stellar Physics : 
+#### Stellar Physics 
 - [ ] Life of a star (fusion of elements, death ... What is possible ??)
 
-#### Fluid Mechanics :   
+#### Fluid Mechanics   
 - [ ] Some Fluids flows (<https://www.youtube.com/watch?v=cvl0gUvofZk>)
 - [ ] Simulate a air flow arround a plane wing
 
