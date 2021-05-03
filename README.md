@@ -34,6 +34,7 @@ Collection of personal projects of Math/Physics Simulations and visualisations
 
 #### E&M
 - [x] [Electric Field Visualization](ssim/Physics/EM/ElectricField/)
+- [x] [Magnetic Field Visualization](ssim/Physics/EM/MagneticField/)
 
 
 #### Quantum 
