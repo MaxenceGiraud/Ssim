@@ -5,7 +5,7 @@ from scipy.integrate import quad
 
 
 def get_magnetic_field_f(l,nd=3):
-    t, x, y, z = smp.symbols('t, x, y, z')
+    t, x, y, z = smp.symbols('\theta, x, y, z')
 
     r = smp.Matrix([x, y, z])
     sep = r-l
@@ -26,15 +26,18 @@ def get_magnetic_field_f(l,nd=3):
 
     return magnetic_field
 
-def display_magnetic_field(wire='triloop',display="3d"):
+def display_magnetic_field(wire='3dswirl',display="3d"):
     '''
-    wire : str,
+    wire : {str,smp.Matrix},
         Wire shape, either : 'loop','triloop','3dswirl'
+        If smp Matrix : shape (3,) depending on 1 constant t, being the angle theta
     display : str,  
         Type of display, either 3d or 2d
     '''
-    t  = smp.symbols('t')
-    if wire == 'loop':
+    t  = smp.symbols('\theta')
+    if isinstance(wire,smp.Matrix):
+        pass
+    elif wire == 'loop':
         wire = smp.Matrix([smp.cos(t), smp.sin(t), 0])
     elif wire == 'triloop':
         wire = (1+(3/4)*smp.sin(3*t))*smp.Matrix([smp.cos(t), smp.sin(t), 0])
@@ -54,6 +57,10 @@ def display_magnetic_field(wire='triloop',display="3d"):
 
     print("Plotting")
 
+    # Wire curve
+    wire_f = smp.lambdify([t], wire)
+    phi = np.linspace(0, 2*np.pi, 100)
+    w = wire_f(phi)
     if display=='2D' or display == '2d' :
         # 2D Plot
         Bx_plot,By_plot = Bx[:,:,0],By[:,:,0]
@@ -62,9 +69,6 @@ def display_magnetic_field(wire='triloop',display="3d"):
                     density=1.5, arrowstyle='->', arrowsize=1,zorder=1)
 
         # Display wire
-        wire_f = smp.lambdify([t], wire)
-        phi = np.linspace(0, 2*np.pi, 100)
-        w = wire_f(phi)
         plt.plot(w[0,0],w[1,0],zorder=2)
 
 
@@ -79,9 +83,6 @@ def display_magnetic_field(wire='triloop',display="3d"):
         ax.quiver(xx, yy, zz, Bx/2, By/2, Bz/2, length=0.1, normalize=False,color="blue")
 
         # Display wire
-        wire_f = smp.lambdify([t], wire)
-        phi = np.linspace(0, 2*np.pi, 100)
-        w = wire_f(phi)
         ax.plot(w[0,0],w[1,0],w[2,0],zorder=2,c="red")
 
         plt.axis("off")
@@ -90,4 +91,4 @@ def display_magnetic_field(wire='triloop',display="3d"):
         raise ValueError
 
 if __name__ == "__main__":
-    display_magnetic_field()
+    display_magnetic_field('triloop',display='2d')
