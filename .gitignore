@@ -200,3 +200,56 @@ dmypy.json
 perso.py
 .vscode/launch.json
 .vscode/tasks.json
+
+### C++ ###
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+
+## IMG/video/audio files ###
+*.png
+*.jpg
+*.mp4
+*.gif
+*.mp3
+*.jpeg
+*.mkv
+*.pgm
+
+
+## Own files ##
+test.py
+test.cpp
+perso.py
+perso.cpp
+*.txt
