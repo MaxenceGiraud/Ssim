@@ -8,10 +8,18 @@ Collection of personal projects of Math/Physics Simulations and visualisations
 [Maxence Giraud](https://github.com/MaxenceGiraud/)
 
 ## Requirements 
+
+For Python code :
+
 * [SciPy](https://www.scipy.org/)
 * [NumPy](https://numpy.org/)
 * [Matplotlib](https://matplotlib.org/) 
 * Some other specific requirements may be specified in the project own readme.
+
+For C++ code : 
+
+*upcoming*
+
 
 *N.B. :* Some readme have written LaTeX, you can view them locally with some capable reader (e.g. VSCode) or using extensions.
 
@@ -44,7 +52,7 @@ Collection of personal projects of Math/Physics Simulations and visualisations
 
 #### General Relativity 
 - [ ] [Black hole Visualization](./ssim/Physics/GR/BlackHole/)
-- [ ] Spacetime behavior of spacetime arround massive object (see science click video on youtube on GR visualisation for the goal of this visualization)
+- [ ] Spacetime behavior arround massive object (see scienceclick video on youtube on GR visualisation for the goal of this visualization)
   
 #### Cosmology 
 - [x] [Galaxy visualization / simulation / collisions](ssim/Physics/Cosmology/Galaxy/)
@@ -54,10 +62,8 @@ Collection of personal projects of Math/Physics Simulations and visualisations
 
 #### Fluid Mechanics   
 - [ ] Some Fluids flows (<https://www.youtube.com/watch?v=cvl0gUvofZk>)
-- [ ] Simulate a air flow arround a plane wing
+- [ ] Simulate fluid flow with interaction with the env (example of airplane wing, boat hull ...)
 
-#### QFT
-- [ ] Generating Feynman diagram
 
 ### Mathematics
 
@@ -86,8 +92,7 @@ Collection of personal projects of Math/Physics Simulations and visualisations
 [1] R. TAYLOR, John. [Classical Mechanics.](https://www.uscibooks.com/taylor2.htm) University Science Books, 2005.   
 [2] SHANKAR, R.. [Principles of Quantum Mechanics](https://www.springer.com/gp/book/9780306447907). Springer US, 2011.    
 [3] J. GRIFFITHS, David y F. SCHROETER,  Darrell. [Introduction to Quantum Mechanics](https://www.cambridge.org/core/books/introduction-to-quantum-mechanics/990799CA07A83FC5312402AF6860311E). Cambridge University Press, 2018.   
+[4] J. GRIFFITHS, David. Introduction to Electrodynamics. Pearson Education Limited, 2013.
 
-[//]: # ([?] J. GRIFFITHS, David. Introduction to Electrodynamics. Pearson Education Limited, 2013.    
-[4] K. KUNDU, Pijush y M. COHEN,  Ira. Fluid Mechanics. Elsevier, 2001.   
-[4] NEEDHAM, Tristan. Visual Complex Analysis. Clarendon Press, 1998.    
-[4] CARROLL, Sean. Spacetime and Geometry: An Introduction to General Relativity. Pearson, 2003.) 
+[//]: # (    
+[?] CARROLL, Sean. Spacetime and Geometry: An Introduction to General Relativity. Pearson, 2003.) 
