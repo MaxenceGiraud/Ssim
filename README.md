@@ -36,7 +36,8 @@ For C++ code :
 - [ ] Foucault pendulum
   
 #### Waves
-- [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves)
+- [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves) at fixed time
+- [ ] Wave simulation
 
 
 #### E&M
