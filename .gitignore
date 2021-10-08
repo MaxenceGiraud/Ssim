@@ -253,7 +253,8 @@ test.cpp
 perso.py
 perso.cpp
 *.txt
-./tmp/*
+*tmp*
+*old*
 
 
 ### Images ###

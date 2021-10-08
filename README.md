@@ -1,6 +1,6 @@
 # Ssim -Scientific Simulations
 
-Collection of personal projects of Math/Physics Simulations and visualisations
+Collection of personal projects of Math/Physics Simulations and visualisations.
 
 
 ## Contributions
@@ -27,43 +27,43 @@ For C++ code :
 
 ### Physics
 #### Classical
-- [x] [N body Simulations](ssim/Physics/Classical/NBody/)
-- [x] [Projectile motion](ssim/Physics/Classical/ProjectileMotion/)
-- [x] [N Linked Pendulum](ssim/Physics/Classical/LinkedPendulum/) 
-- [x] [N Springed Pendulum system](ssim/Physics/Classical/SpringedPendulum/)
+- [x] [N body Simulations](./ssim/psim/Classical/NBody/)
+- [x] [Projectile motion](./ssim/psim/Classical/ProjectileMotion/)
+- [x] [N Linked Pendulum](./ssim/psim/Classical/LinkedPendulum/) 
+- [x] [N Springed Pendulum system](./ssim/psim/Classical/SpringedPendulum/)
 - [ ] N Coupled Pendulum
 - [ ] N Coupled Mass
 - [ ] Foucault pendulum
   
 #### Waves
-- [x] [Waves interferences](ssim/Physics/Wave/WaveInterference) (And Double Split experiment using classical waves) at fixed time
-- [ ] Wave simulation
+- [x] [Waves interferences](./ssim/psim/Wave/WaveInterference) (And Double Split experiment using classical waves) at fixed time
+- [ ] [Wave simulation](./ssim/psim/Waves/../Wave/wsim/)
 
 
 #### E&M
-- [x] [Electric Field Visualization](ssim/Physics/EM/ElectricField/)
-- [x] [Magnetic Field Visualization](ssim/Physics/EM/MagneticField/)
+- [x] [Electric Field Visualization](./ssim/psim/EM/ElectricField/)
+- [x] [Magnetic Field Visualization](./ssim/psim/EM/MagneticField/)
 
 
 #### Quantum 
-- [x] [Eigenstates solver (1D & 2D)](ssim/Physics/Quantum/EigenstatesSolver/)
-- [x] [Hydrogen atom orbitals plot](ssim/Physics/Quantum/Hydrogen/)
+- [x] [Eigenstates solver (1D & 2D)](./ssim/psim/Quantum/EigenstatesSolver/)
+- [x] [Hydrogen atom orbitals plot](./ssim/psim/Quantum/Hydrogen/)
 - [ ] Helium orbitals (using [Hartree-Fock method](https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method))
 - [ ] Quantum Double Split
 
 #### General Relativity 
-- [ ] [Black hole Visualization](./ssim/Physics/GR/BlackHole/)
+- [ ] [Black hole Visualization](./ssim/psim/GR/BlackHole/)
 - [ ] Spacetime behavior arround massive object (see scienceclick video on youtube on GR visualisation for the goal of this visualization)
   
 #### Cosmology 
-- [x] [Galaxy visualization / simulation / collisions](ssim/Physics/Cosmology/Galaxy/)
+- [x] [Galaxy visualization / simulation / collisions](./ssim/psim/Cosmology/Galaxy/)
     
 #### Stellar Physics 
 - [ ] Life of a star (fusion of elements, death ... What is possible ??)
 
 #### Fluid Mechanics   
 - [ ] Some Fluids flows (<https://www.youtube.com/watch?v=cvl0gUvofZk>)
-- [ ] Simulate fluid flow with interaction with the env (example of airplane wing, boat hull ...)
+- [ ] Simulate fluid flow with interaction with the env (example of 2D/3D airplane wing, boat hull ...)
 
 
 ### Mathematics
@@ -73,18 +73,18 @@ For C++ code :
 
 
 #### Fractals   
-- [x] [Julia/Fatou set](ssim/Math/JuliaSet/)
-- [x] [Koch Snowflakes](ssim/Math/KochSnowflake/)
-- [x] [Sierpiński triangle/carpet/sponge](./ssim/Math/Sierpinski/)
+- [x] [Julia/Fatou set](./ssim/msim/JuliaSet/)
+- [x] [Koch Snowflakes](./ssim/msim/KochSnowflake/)
+- [x] [Sierpiński triangle/carpet/sponge](./ssim/msim/Sierpinski/)
 - [ ] Tetration fractals
 
 #### Chaotic Maps
 
-- [x] [Lorenz system](./ssim/Math/LorenzSystem/)
+- [x] [Lorenz system](./ssim/msim/LorenzSystem/)
 - [ ] Logistic Map Bifurcation diagram
 - [ ] Poincaré map (e.g. Duffing eq)
 - [ ] Exponential map
-- [x] [Bogdanov map](./ssim/Math/BogdanovMap/)
+- [x] [Bogdanov map](./ssim/msim/BogdanovMap/)
 - [ ] Others from [List of chaotic maps](https://en.wikipedia.org/wiki/List_of_chaotic_maps)
 
 ## Main References
