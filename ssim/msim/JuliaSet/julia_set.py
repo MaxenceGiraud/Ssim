@@ -1,8 +1,7 @@
+from typing import no_type_check
 import numpy as np
 import matplotlib.pyplot as plt
-import numba
 
-@numba.jit
 def juliaset(c,init_with_constant=False,posx = (-2,2),posy=(-2,2),n_iter = 100,precision =1000,display=True,colormap='Spectral',f = lambda z,c : z**2 +c,div_threshold = 2 ):
     '''Compute the divergence time of the series z_{n+1} = z_n**2 +c on the complex plane
 
@@ -71,6 +70,9 @@ def juliaset(c,init_with_constant=False,posx = (-2,2),posy=(-2,2),n_iter = 100,p
         plt.show()
 
     return  n_iter_diverg
+
+def mandelbrot(n_iter = 100,precision =1000,colormap='inferno',display=True):
+    return juliaset(c=0,init_with_constant=True, n_iter=n_iter,precision=precision,colormap=colormap,display=display)
 
 def main():
     j=juliaset(0,init_with_constant=True,posy=(-1.5,1.5),posx=(-2,1.2),display=True,precision=1000,n_iter=100,colormap='inferno')
